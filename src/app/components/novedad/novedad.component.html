@@ -1,0 +1,31 @@
+<div class="contenedor-novedad">
+
+  <div class="contenedor-novedad__titulo u-margin-bottom-md" [innerHTML]="novedad.encabezado">
+  </div>
+  <div class="inicio__novedades__subtitulo contenedor-novedad__subtitulo">
+    <img src="assets/png/iconos-calendario-sf.png" alt="" class="inicio__novedades__icono">
+    <p class="inicio__novedades__texto" [innerHTML]="novedad.fecha"></p>
+  </div>
+  <div class="inicio__novedades__subtitulo contenedor-novedad__subtitulo u-margin-bottom-sm">
+    <img src="assets/png/Iconos-location.png" alt="" class="inicio__novedades__icono">
+    <p class="inicio__novedades__texto" [innerHTML]="novedad.lugar"></p>
+  </div>
+  <div class="contenedor-novedad__imagen">
+    <div id="carouselNovedad" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item" [ngClass]="{'active': item===novedad.urlImagenes[0]}" *ngFor="let item of novedad.urlImagenes" >
+          <img class="d-block w-100" [src]="item" alt="Banner">
+        </div>
+      </div>
+      <a *ngIf="novedad.urlImagenes.length>1"  class="carousel-control-prev" href="#carouselNovedad" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon flecha-izquierda" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a *ngIf="novedad.urlImagenes.length>1" class="carousel-control-next" href="#carouselNovedad" role="button" data-slide="next">
+        <span class="carousel-control-next-icon flecha-derecha" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+      </a>
+    </div>
+  </div>
+  <div class="contenedor-novedad__articulo" [innerHTML]="novedad.texto"></div>
+</div>

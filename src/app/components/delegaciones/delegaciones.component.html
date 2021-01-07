@@ -1,0 +1,11 @@
+<div class="contenedor-delegaciones u-margin-top-sm">
+    <div class="contenedor-delegaciones__contenido" *ngFor="let delegacion of delegaciones">
+        <h4><b [innerHTML]="delegacion.titulo"></b></h4>
+        <p class="contenedor-delegaciones__texto" *ngIf="delegacion.ubicacion"><img src="assets/png/Iconos-location.png" alt="" class="contenedor-sede__icono"><span [innerHTML]="delegacion.ubicacion"></span></p>
+        <p class="contenedor-delegaciones__texto" *ngIf="delegacion.horario"><img src="assets/png/Iconos-reloj.png" alt="" class="contenedor-sede__icono"><span [innerHTML]="delegacion.horario"></span></p>
+        <p class="contenedor-delegaciones__texto" *ngIf="delegacion.telefono"><img src="assets/png/Iconos-phone.png" alt="" class="contenedor-sede__icono"><span [innerHTML]="delegacion.telefono"></span></p>
+        <p class="contenedor-delegaciones__texto" *ngIf="delegacion.mail"><img src="assets/png/Iconos-mail.png" alt="" class="contenedor-sede__icono">
+            <a href="mailto:{{delegacion.mail}}" [innerHTML]="delegacion.mail"></a>
+        </p>
+    </div>
+</div>

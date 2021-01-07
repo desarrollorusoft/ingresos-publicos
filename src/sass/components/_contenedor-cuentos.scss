@@ -1,0 +1,12 @@
+.contenedor-cuentos{
+
+  display:flex;
+  flex-direction: column;
+
+  font-size:1.4rem;
+
+  &__img{
+    width:100%;
+  }
+
+}

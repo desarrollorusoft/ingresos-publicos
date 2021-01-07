@@ -1,0 +1,480 @@
+.fixed {
+    font-size: 3.5rem;
+    width: 6rem;
+    height: 6rem;
+    background-color: $color-secondary;
+    color: $color-white;
+    padding: 2rem;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 7rem;
+    right: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
+    z-index: 1000;
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 1rem rgba(0, 0, 0, .4);
+    }
+    &:hover:focus,
+    &:focus,
+    &:active {
+        transform: translateY(0);
+        box-shadow: none;
+        outline: none;
+    }
+    @include respond( bp5) {
+        bottom: 5rem;
+        right: 5rem;
+    }
+    @include respond( bp6) {
+        bottom: 3rem;
+    }
+}
+
+.inicio {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-primary-lightest;
+    width: 100%;
+    &__carousel {
+        width: 100%;
+        position: relative;
+        padding-bottom: 4.5rem;
+        &--indicators {
+            position: absolute;
+            bottom: -5.5rem;
+            padding-bottom: 1.7rem;
+            border-bottom: 1px solid $color-grey-light-3;
+            margin-left: 0;
+            margin-right: 0;
+
+            &--sin-linea {
+                border-bottom: 0;
+            }
+        }
+        .carousel-control-next {
+            transform: translateX(0);
+            @include respond(bp6) {
+                display: none;
+            }
+        }
+        .carousel-control-prev {
+            transform: translateX(0);
+            @include respond(bp6) {
+                display: none;
+            }
+        }
+        li.inicio__carousel--item {
+            background-color: rgba( $color-grey-dark-3, .6);
+            height: .8rem;
+            width: 0.8rem;
+            border-radius: 50%;
+            &.active {
+                background-color: $color-secondary;
+            }
+        }
+    }
+    &__typ {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0 20rem;
+        @include respond( bp1) {
+            padding: 0 10rem;
+        }
+        @include respond( bp2) {
+            padding: 0 5rem;
+        }
+        @include respond( bp4) {
+            padding: 0 2rem;
+        }
+        &--inmuebles,
+        &--vehiculos {
+            flex: 4
+        }
+        &--contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+            width: 100%;
+            @include respond( bp3) {
+                padding: 0;
+            }
+            &>* {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        &--ol {
+            height: 20rem;
+            width: 100%;
+            justify-content: space-evenly;
+        }
+        &--ac {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+    &__iYh {
+        display: flex;
+        min-height: 90vh;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        padding: 2.5rem 23rem;
+        padding-top: 5rem;
+        background-color: $color-secondary-lightest;
+        width: 100%;
+        @include respond( bp1) {
+            padding: 2.5rem 12.5rem;
+        }
+        @include respond( bp2) {
+            padding: 2.5rem 5rem;
+        }
+        @include respond( bp4) {
+            padding: 1rem 2rem;
+        }
+        @include respond( bp6) {
+            min-height: 0;
+            height: auto;
+        }
+        &--contenedor {
+            display: flex;
+            justify-content: space-between;
+            align-items: space-between;
+            flex-wrap: wrap;
+        }
+        &--card {
+            height: 28rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 0 0 32%;
+            border-radius: 0.5rem;
+            transition: all .4s;
+            backface-visibility: hidden;
+            background-color: $color-white;
+            margin-bottom: 2rem;
+            @include no-hover {
+                border: 1px solid $color-secondary;
+                border-radius: .5rem;
+                transform: none;
+            }
+            @include respond( bp5) {
+                flex: 0 0 100%;
+                padding: 1.6rem 1.1rem;
+                margin: 0;
+                height: auto;
+                border: none;
+                background-color: transparent;
+                & a {
+                    background-color: $color-secondary;
+                    padding: 3rem 0;
+                    border-radius: 1rem;
+                }
+                & .inicio__iYh--texto {
+                    color: $color-white;
+                    padding: 0;
+                    & br {
+                        display: none;
+                    }
+                }
+                & .contenedor-iconos__icono {
+                    display: none;
+                }
+            }
+            @include respond( bp7) {
+                flex: 0 0 100%;
+                padding: .8rem 1.1rem;
+                & * {
+                    word-wrap: none;
+                    word-break: none;
+                }
+                & a {
+                    padding: 2rem 0;
+                }
+            }
+            &:hover {
+                transform: translateZ(0);
+                backface-visibility: hidden;
+            }
+            & a:hover {
+                text-decoration: none;
+            }
+        }
+        &--texto {
+            padding: 1.5rem 2rem 0 2rem;
+            color: $color-primary-darkest;
+            font-size: 1.8rem;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    }
+    &__novedades {
+        display: flex;
+        flex-direction: column;
+        padding: 2.5rem 20rem 5rem 20rem;
+        width: 100%;
+        position: relative;
+        @include respond( bp1) {
+            padding: 2.5rem 10rem;
+        }
+        @include respond( bp2) {
+            padding: 2.5rem 5rem;
+        }
+        @include respond( bp4) {
+            padding: 1rem 2rem;
+        }
+        @include respond( bp6) {
+            min-height: 0;
+        }
+        &__ira {
+            align-self: center;
+            background-color: $color-white;
+            color: $color-secondary;
+            border: 1px solid $color-secondary;
+            margin-top: 5rem;
+            font-weight: 600;
+            &:hover {
+                background-color: $color-secondary;
+                color: $color-white;
+            }
+        }
+        &__boton {
+            position: absolute;
+            top: 50%;
+            background: white;
+            transform: translate(50%, 50%);
+            font-size: 5rem;
+            border: none;
+            color: $color-primary-dark;
+            transition: all .2s;
+            height: 4rem;
+            width: 4rem;
+            cursor: pointer;
+            &:hover {
+                top: 49%;
+                text-shadow: 0 1rem 1rem rgba( 0, 0, 0, .2);
+            }
+            &:hover:focus,
+            &:focus,
+            &:active {
+                outline: none;
+                top: 50%;
+                text-shadow: none;
+            }
+            @include respond( bp4) {
+                font-size: 3rem;
+            }
+        }
+        &--prev {
+            left: 10%;
+            @include respond( bp1) {
+                left: 5%;
+            }
+            @include respond( bp2) {
+                left: 2%;
+            }
+            @include respond( bp4) {
+                left: 1%;
+            }
+            @include respond( bp5) {
+                display: none;
+            }
+        }
+        &--sig {
+            right: 12%;
+            @include respond( bp1) {
+                right: 7%;
+            }
+            @include respond( bp2) {
+                right: 5%;
+            }
+            @include respond( bp4) {
+                right: 3%;
+            }
+            @include respond( bp5) {
+                display: none;
+            }
+        }
+        &__subtitulo {
+            display: flex;
+            align-items: center;
+            &--fecha {
+                margin: 1rem 0;
+            }
+        }
+        &__icono {
+            width: 1.5rem;
+            margin-right: 1rem;
+        }
+        &__texto {
+            margin: 0;
+            color: $color-grey-mvl;
+            font-size: 1.6rem;
+        }
+        &--contenedor-boton {
+            align-self: center;
+        }
+        &--contenedor {
+            display: flex;
+            padding-top: 2rem;
+            border-radius: 3px;
+            overflow: hidden;
+            &>* {
+                flex: 0 0 50%;
+                padding: 0 3rem;
+                @include respond( bp7) {
+                    flex: 0 0 100%;
+                }
+            }
+        }
+        &__titulo {
+            height: 10rem;
+            & h3 {
+                font-size: 2rem;
+                padding-top: 2rem;
+                font-weight: 700;
+                min-height: 3rem;
+            }
+        }
+        &__noticia {
+            height: 50rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            min-width: 1%;
+            text-decoration: none;
+            transition: all .2s;
+            border-top: 2px solid $color-primary-dark;
+            &:hover {
+                text-decoration: none;
+                transform: translateY(-1rem);
+            }
+            @include respond( bp6) {
+                height: 45rem;
+            }
+            @include respond( bp7) {
+                height: auto;
+            }
+            &--contenedor-img {
+                width: 100%;
+                height: 26rem;
+                overflow: hidden;
+                position: relative;
+                border-radius: 3px;
+                @include respond( bp7) {
+                    max-height: 30rem;
+                }
+            }
+            &--img {
+                width: 100%;
+                object-fit: cover;
+            }
+            &--fecha {
+                color: $color-primary;
+                font-size: 1.1rem;
+            }
+            &--texto {
+                color: $color-grey-dark-1;
+                font-size: 1.3rem;
+                &:before {
+                    content: "";
+                    display: block;
+                    height: 4px;
+                    width: 3rem;
+                    margin: 1rem 0 2rem 0;
+                    background-color: $color-secondary;
+                }
+            }
+            &--contenedor-subtitulo {
+                height: 10rem;
+            }
+        }
+    }
+    &__contenedor--texto {
+        width: 50%;
+        padding: 2rem 4rem;
+        background-color: $color-white;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 1000px;
+    }
+    &__link {
+        &:link,
+        &:active {
+            text-decoration: none;
+            transition: all .4s;
+        }
+        &--texto {
+            color: $color-grey-dark-1;
+            font-size: $default-font-size;
+            text-transform: capitalize;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &__titulo {
+        font-weight: 700;
+        font-size: 3.0em;
+        margin-bottom: 3.5rem;
+        width: 100%;
+    }
+    & .covid19 {
+        
+        & > .btn-purple {
+            background-color: #720864;
+            color: white;
+            font-size: 2.4rem;
+            font-weight: bold;
+            border-radius: 7px;
+        }
+    }
+}
+
+.carousel-control-next {
+    transform: translateX(100%);
+    @include respond( bp3) {
+        transform: translateX(0);
+    }
+}
+
+.carousel-control-prev {
+    transform: translateX(-100%);
+    @include respond( bp3) {
+        transform: translateX(0);
+    }
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 8%;
+    color: $color-primary-darkest;
+    &>span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        padding: 1rem;
+        border-radius: 50%;
+        color: $color-secondary;
+        transition: all .2s;
+        &:hover {
+            transform: translateY(-3px);
+        }
+    }
+}

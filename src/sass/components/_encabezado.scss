@@ -1,0 +1,31 @@
+.encabezado{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+
+  flex: 1;
+  padding: 0 20rem;
+
+  @include respond( bp1 ){
+    padding: 0 10rem;
+  }
+
+  @include respond( bp2 ){
+    padding: 0 5rem;
+  }
+
+  @include respond( bp4 ){
+    padding: 0 2rem;
+  }
+
+
+  &__titulo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color:$color-grey-dark-1;
+  }
+
+  &__img {
+    height: 7rem;
+  }
+}

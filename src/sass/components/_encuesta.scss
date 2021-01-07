@@ -1,0 +1,37 @@
+.encuesta {
+    height:35rem;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    &__texto,&__estrellas{
+//flex:1;
+        display:flex;
+        align-items: center;
+    }  
+
+    &__texto {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__estrellas {
+        justify-content: flex-start;
+    }
+
+    &__estrella {
+        height: 5rem;
+        width:5rem;
+        fill: $color-grey-dark-3;   
+
+        transition:all .5s;
+        &:not(:last-child){
+            margin-right: 2rem;
+        }
+
+        &:hover {
+            fill:$color-primary;
+        }
+    }
+
+}

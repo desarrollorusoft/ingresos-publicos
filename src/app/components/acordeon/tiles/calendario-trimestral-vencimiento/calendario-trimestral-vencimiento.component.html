@@ -1,0 +1,27 @@
+<!-- CALENDARIO TRIBUTARIO TRIMESTRAL -->
+<div class="acordeon__contenido" *ngIf="misRegistros">
+    <div class="acordeon__contenedor-acordeon" id="pypCalendarioTributario">
+        <button class="acordeon__boton-acordeon collapsed" data-toggle="collapse" [attr.data-target]="'#'+identificador()" aria-expanded="false" [attr.aria-controls]="identificador()" [innerHTML]="encabezado"></button>
+    </div>
+    <div [id]="identificador()" class="collapse" aria-labelledby="pypCalendarioTributario" data-parent="#acordeon">
+        <div class="acordeon__acordeon-interno ">
+            <div class="acordeon__bajada-calendario u-margin-bottom-sm" *ngIf="bajada">
+                <b [innerHTML]="bajada"></b>
+            </div>
+            <table class="acordeon__tabla-typ">
+                <thead>
+                    <tr>
+                        <th class="u-text-bold u-text-center" width="50%">Trimestre</th>
+                        <th class="u-text-bold u-text-center" width="50%">Vencimiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let registro of misRegistros">
+                        <td class="u-color-2 u-text-center" [innerHTML]="registro.nombre"></td>
+                        <td class="u-color-2 u-text-center" [innerHTML]="registro.vencimiento"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

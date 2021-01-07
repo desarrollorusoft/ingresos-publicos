@@ -1,0 +1,33 @@
+
+.contenedor-delegaciones{
+
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__contenido{
+    flex: 0 0 49%;
+    padding: 1.5rem 0;
+
+    @include respond( bp7 ){
+      flex: 0 0 100%;
+    }
+  }
+
+  &__mapa {
+    width: 100%;
+    height: 40rem;
+    border: 0;
+  }
+
+  &__contenido{
+    font-size: $font-size-sm;
+  }
+
+  &__icono{
+    margin-right:1.5rem;
+    width:1.5rem;
+    height:1.5rem;
+  }
+
+}

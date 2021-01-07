@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-size: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    // 10 px en el root 62.5% de 16(default)
+    font-size: 62.5%;
+    @include respond( bp1) {
+        // 9 px en el root 62.5% de 16(default)
+        font-size: 56.25%;
+    }
+    @include respond( bp5) {
+        // 8 px en el root 62.5% de 16(default)
+        font-size: 50%;
+    }
+    @include respond( bpg1) {
+        font-size: 75%;
+    }
+    @include respond( bpg2) {
+        font-size: 90%;
+    }
+}
+
+body {
+    font-family: $default-font;
+    color: $color-grey-dark-2;
+    line-height: 1.3;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.margen-mobile {
+    display: none;
+    @include respond(bp5) {
+        display: initial;
+        margin-right: 5px;
+    }
+}

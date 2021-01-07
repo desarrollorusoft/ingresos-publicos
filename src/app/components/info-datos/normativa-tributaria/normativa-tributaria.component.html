@@ -1,0 +1,43 @@
+<div class="contenedor-indice">
+    <h3 class="u-margin-bottom-sm"><b>Encontrá los tributos dentro de nuestra<br>Ordenanza Fiscal (Texto Ordenado)</b></h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Tributo</th>
+                <th scope="col" class="derecha">T&iacute;tulo II - Parte Especial: Cap. N&deg;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let indice of indices">
+                <td [innerHTML]="indice.titulo"></td>
+                <td [innerHTML]="indice.ubicacion" class="derecha"></td>
+            </tr>
+            <tr>
+        </tbody>
+    </table>
+</div>
+<div id="acordeon">
+    <div class="acordeon__contenido" *ngFor="let categoria of categorias; let i = index">
+
+        <div class="acordeon__contenedor-acordeon" [id]="'normativa-'+i">
+            <button class="acordeon__boton-acordeon collapsed u-text-bold acordeon__texto-boton--grande" data-toggle="collapse" [attr.data-target]="'#normativaCollapse-'+i" aria-expanded="false" [attr.aria-controls]="'normativaCollapse-'+i" [innerHTML]="categoria.titulo"></button>
+        </div>
+        <div [id]="'normativaCollapse-'+i" class="collapse" [attr.aria-labelledby]="'categoriaPregunta-'+i" data-parent="#acordeon">
+            <div class="contedor_normativas acordeon__normativa">
+                <div class="contendor-normativa" *ngFor="let normativa of categoria.normativas">
+
+                    <a *ngIf="normativa.url" [href]="normativa.url" target="_blank">
+                        <h4 class="titulo" [innerHTML]="normativa.titulo"></h4>
+                    </a>
+                    <h4 *ngIf="!normativa.url" class="titulo" [innerHTML]="normativa.titulo"></h4>
+                    <div class="contendor-normativa__documentos" *ngFor="let documento of normativa.documentos">
+                        <a class="link" [href]="documento.link" target="_blank" [innerHTML]="documento.titulo"></a>
+                    </div>
+
+                </div>
+
+                <div class="contedor_normativas__adicional" [innerHTML]="categoria.contenidoExtra"></div>
+            </div>
+        </div>
+    </div>
+</div>

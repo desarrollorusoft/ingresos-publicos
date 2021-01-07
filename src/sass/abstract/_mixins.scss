@@ -1,0 +1,44 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == bp1 {
+    @media only screen and (max-width: $bp1) { @content };
+  }
+
+  @if $breakpoint == bp2 {
+    @media only screen and (max-width: $bp2) { @content };
+  }
+
+  @if $breakpoint == bp3 {
+    @media only screen and (max-width: $bp3) { @content };
+  }
+
+  @if $breakpoint == bp4 {
+    @media only screen and (max-width: $bp4) { @content };
+  }
+
+  @if $breakpoint == bp5 {
+    @media only screen and (max-width: $bp5) { @content };
+  }
+
+  @if $breakpoint == bp6 {
+    @media only screen and (max-width: $bp6) { @content };
+  }
+
+  @if $breakpoint == bp7 {
+    @media only screen and (max-width: $bp7) { @content };
+  }
+  
+  @if $breakpoint == bp8 {
+    @media only screen and (max-width: $bp8) { @content };
+  }
+  
+  @if $breakpoint == bpg1 {
+    @media only screen and (min-width: $bpg1) { @content };
+  }
+  @if $breakpoint == bpg2 {
+    @media only screen and (min-width: $bpg2) { @content };
+  }
+}
+
+@mixin no-hover{
+  @media only screen and (hover:none){@content}
+}

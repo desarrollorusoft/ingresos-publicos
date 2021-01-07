@@ -1,0 +1,6 @@
+div.iframe-container > iframe div.main-container {
+    background: white !important;
+}
+div.iframe-container > iframe div.content-box__logo {
+    display: none !important;
+}

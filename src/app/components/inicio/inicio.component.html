@@ -1,0 +1,278 @@
+<div class="atention my-3">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="
+            col-12 p-5">
+                <div class="py-3 pl-3">
+                    <h1>Tu ABL cura, asiste, patrulla y limpia.</h1>
+                    <h5 class="mt-4 mb-2">Por eso necesitamos que con responsabilidad lo sigas pagando <span class="resaltado-verde">online desde tu casa.</span></h5>
+                    <div class="">
+                        <img src="https://www.vicentelopez.gov.ar/static-iipp/p/IIPP/banners/inicio/colors.png" class="w-100">
+                    </div>
+                    <div class="row my-5">
+                        <div class="col-12 pr-0">
+                            <a href="https://www.vicentelopez.gov.ar/SAT/" target="_blank" class="btn btn-semidark mr-4">Ingresá</a>
+                            <a href="https://www.vicentelopez.gov.ar/SAT/pages/pub/registro.xhtml" target="_blank" class="btn btn-semidark mr-5">Registrate</a>
+                            <a href="https://www.vicentelopez.gov.ar/static-iipp/p/IIPP//instructivo/SAT/Instructivo_Registracion_a_SAT.pdf" target="_blank" class="download-link ml-5">
+                                <div class="mt-3" style="margin-left: -1.8rem; display: inline;">
+                                    <img src="https://www.vicentelopez.gov.ar/static-iipp/p/IIPP/banners/home/download.png" class="icon">
+                                    Instructivo de Registración
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7 col-12 mt-5">
+                            <p>También podés instalar SAT Móvil en tu teléfono. Buscala como <b>MVL SAT MÓVIL</b></p>
+                        </div>
+                        <div class="col-md-5 col-12 mt-5">
+                            <div class="mobile-apps bl-1">
+                                <a href="https://itunes.apple.com/ar/app/sat-m%C3%B3vil/id1168697918?mt=8" target="_blank" class="pl-5">
+                                    <img src="https://www.vicentelopez.gov.ar/static-iipp/p/IIPP/banners/home/apple.png" class="icon">
+                                </a>
+                                <a href="https://play.google.com/store/apps/details?id=ar.com.cognisys.mvl.sat.android" target="_blank" class="pl-5">
+                                    <img src="https://www.vicentelopez.gov.ar/static-iipp/p/IIPP/banners/home/android.png" class="icon">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="inicio__carousel">
+  <div id="carouselInicio" class="carousel slide" data-interval="6000" data-ride="carousel">
+    <ol class="carousel-indicators inicio__carousel--indicators">
+      <li data-target="#carouselInicio" [attr.data-slide-to]="i" class="inicio__carousel--item"
+          [ngClass]="{'active': item===inicio.urlCarousel[0]}"
+          *ngFor="let item of inicio.urlCarousel; let i = index"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item" [ngClass]="{'active': item===inicio.urlCarousel[0]}"
+           *ngFor="let item of inicio.urlCarousel">
+        <a *ngIf="item.toggle" data-toggle="modal" [href]="item.redireccion" [target]="'_blank'" >
+          <img class="d-block w-100 img-fluid" [src]="item.url | domSeguro" alt="Banner">
+        </a>
+        <a *ngIf="!item.toggle" [href]="item.redireccion" [target]="'_blank'">
+          <img class="d-block w-100 img-fluid" [src]="item.url | domSeguro" alt="Banner">
+        </a>
+      </div>
+    </div>
+    <a class="carousel-control-prev inicio__carousel--control" href="#carouselInicio" role="button" data-slide="prev">
+      <span class="flecha-izquierda" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next inicio__carousel--control" href="#carouselInicio" role="button" data-slide="next">
+      <span class="flecha-derecha" aria-hidden="true"></span>
+    </a>
+  </div>
+  
+  <div class="modal fade my-option-modal" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <h5 class="u-text-center"><b>Seleccioná el tributo del cual deseas<br>recibir la factura electrónica</b></h5>
+          <br/>
+          <div class="">
+            <a class="btn btn-outline-primary btn-lg btn-block border-0" [href]="redireccionABL" [target]="'_blank'">
+              <span>A.L.C.V.P y S.V.</span>
+            </a>
+            <a class="btn btn-outline-primary btn-lg btn-block border-0" [href]="redireccionAuto" [target]="'_blank'">
+              <span>Automotores</span>
+            </a>
+            <a class="btn btn-outline-primary btn-lg btn-block border-0" [href]="redireccionMoto" [target]="'_blank'">
+              <span>Motovehículos</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade video-modal" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true" >
+    <span class="close-video" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></span>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <video width="100%" controls autoplay >
+            <source src="https://www.vicentelopez.gov.ar/static-iipp/p/IIPP/video/Sat_Movil_Simulacion.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="inicio">
+    <div id="typ" class="inicio__typ">
+
+        <div class="inicio__typ--contenedor">
+            <h3 class="heading-3 heading-3--secondary inicio__titulo">Trámites y Pagos</h3>
+
+            <div class="inicio__typ--ac">
+                <div class="contenedor-iconos  contenedor-iconos--veh">
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','abl']">
+                        <div class="contenedor-iconos__icono">
+                            <img src="assets/png/Iconos-casa.png" alt="" class="contenedor-iconos__img">
+                            <div class="contenedor-iconos__texto">Alumbrado, Limpieza,<br>Conservación de la<br>Vía Pública y Servicios Varios</div>
+                        </div>
+                    </a>
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','automotor']">
+                        <div class="contenedor-iconos__icono">
+                            <img src="assets/png/Iconos-auto.png" alt="" class="contenedor-iconos__img">
+                            <div class="contenedor-iconos__texto">Automotores<br>Municipalizados</div>
+                        </div>
+                    </a>
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','motovehiculos']">
+                        <div class="contenedor-iconos__icono">
+                            <img src="assets/png/Iconos-moto.png" alt="" class="contenedor-iconos__img">
+                            <div class="contenedor-iconos__texto">Motovehículos</div>
+                        </div>
+                    </a>
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','embarcaciones']">
+                        <div class="contenedor-iconos__icono">
+                            <img src="assets/png/Iconos-barco.png" alt="" class="contenedor-iconos__img">
+                            <div class="contenedor-iconos__texto">Embarcaciones</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="linea-divisoria">
+
+            <h3 id="ddjj" class="heading-3 heading-3--secondary inicio__titulo">Declaraciones Juradas</h3>
+            <div class="inicio__typ--ac">
+                <div class="contenedor-iconos contenedor-iconos--ac ">
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','regimenSimplificado']">
+                        <div class="contenedor-iconos__icono">
+                            <div class="contenedor-iconos__recuadro">
+                                <div class="contenedor-iconos__texto contenedor-iconos__texto__recuadro">Régimen<span class="margen-mobile"></span><br>Simplificado</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','inspeccionSegHig']">
+                        <div class="contenedor-iconos__icono">
+                            <div class="contenedor-iconos__recuadro">
+                                <div class="contenedor-iconos__texto contenedor-iconos__texto__recuadro">Inspección por<span class="margen-mobile"></span><br>Seguridad e Higiene</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','publicidad']">
+                        <div class="contenedor-iconos__icono">
+                            <div class="contenedor-iconos__recuadro">
+                                <div class="contenedor-iconos__texto contenedor-iconos__texto__recuadro">Publicidad y<span class="margen-mobile"></span><br>Propaganda</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','oep']">
+                        <div class="contenedor-iconos__icono">
+                            <div class="contenedor-iconos__recuadro">
+                                <div class="contenedor-iconos__texto contenedor-iconos__texto__recuadro">Ocupación o Uso<span class="margen-mobile"></span><br>de Espacios Públicos</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','antenas']">
+                        <div class="contenedor-iconos__icono">
+                            <div class="contenedor-iconos__recuadro">
+                                <div class="contenedor-iconos__texto contenedor-iconos__texto__recuadro">Antenas</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','mantenimientoVial']">
+                        <div class="contenedor-iconos__icono">
+                            <div class="contenedor-iconos__recuadro">
+                                <div class="contenedor-iconos__texto contenedor-iconos__texto__recuadro">Mantenimiento<span class="margen-mobile"></span><br>Vial Municipal</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','ingresosBrutos']">
+                        <div class="contenedor-iconos__icono">
+                            <div class="contenedor-iconos__recuadro">
+                                <div class="contenedor-iconos__texto contenedor-iconos__texto__recuadro">Ingresos Brutos</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','serviciosVarios']">
+                        <div class="contenedor-iconos__icono">
+                            <div class="contenedor-iconos__recuadro">
+                                <div class="contenedor-iconos__texto contenedor-iconos__texto__recuadro">Servicios Varios<span class="margen-mobile"></span><br>(Motores)</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="linea-divisoria">
+
+            <h3 id="ot" class="heading-3 heading-3--secondary inicio__titulo">Otros Trámites</h3>
+            <div class="inicio__typ--ac">
+                <div class="contenedor-iconos contenedor-iconos--ot ">
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','catastro']">
+                        <div class="contenedor-iconos__icono">
+                            <div class="contenedor-iconos__recuadro contenedor-iconos__recuadro--ot">
+                                <div class="contenedor-iconos__texto contenedor-iconos__texto__recuadro">Catastro</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="inicio__link u-scale" href="https://www.vicentelopez.gov.ar/cobros_fiscalizacion/">
+                        <div class="contenedor-iconos__icono">
+                            <div class="contenedor-iconos__recuadro contenedor-iconos__recuadro--ot">
+                                <div class="contenedor-iconos__texto contenedor-iconos__texto__recuadro">Estación Sanitaria</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','derechosCementerio']">
+                        <div class="contenedor-iconos__icono">
+                            <div class="contenedor-iconos__recuadro contenedor-iconos__recuadro--ot">
+                                <div class="contenedor-iconos__texto contenedor-iconos__texto__recuadro">Derechos de<span class="margen-mobile"></span><br>Cementerio</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','piletas']">
+                        <div class="contenedor-iconos__icono">
+                            <div class="contenedor-iconos__recuadro contenedor-iconos__recuadro--ot">
+                                <div class="contenedor-iconos__texto contenedor-iconos__texto__recuadro">Revisación Médica<span class="margen-mobile"></span><br>para Pileta</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="inicio__link u-scale" [routerLink]="['/tramite','coworking']">
+                        <div class="contenedor-iconos__icono">
+                            <div class="contenedor-iconos__recuadro contenedor-iconos__recuadro--ot">
+                                <div class="contenedor-iconos__texto contenedor-iconos__texto__recuadro">Coworking<span class="margen-mobile"></span></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="idu" class="inicio__iYh u-margin-top-lg">
+        <h3 class="heading-3 heading-3--secondary inicio__titulo u-text-center">Información y Datos Útiles</h3>
+        <app-botones-info></app-botones-info>
+    </div>
+    <div class="inicio__novedades">
+        <h3 class="heading-3 heading-3--secondary inicio__titulo u-text-center">
+            Novedades
+        </h3>
+
+        <button class="inicio__novedades__boton inicio__novedades--prev flecha-izquierda flecha--chica flecha--absolute" (click)="retroceder()">
+   </button>
+        <button class="inicio__novedades--sig inicio__novedades__boton flecha-derecha flecha--chica flecha--absolute" (click)="avanzar()">
+   </button>
+
+        <div class="inicio__novedades--contenedor">
+
+            <div class="inicio__novedades__novedad" *ngFor="let novedad of novedades; let i = index" [style]="order(i) | styleSeguro">
+                <app-articulo [novedad]="novedad"></app-articulo>
+            </div>
+        </div>
+        <button class="inicio__novedades__ira btn" [routerLink]="['/novedades','lista']">
+          Ver m&aacute;s
+        </button>
+    </div>
+
+</div>

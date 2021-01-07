@@ -1,0 +1,52 @@
+.contenedor-novedad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20rem;
+    @include respond( bp1) {
+        padding: 0 10rem;
+    }
+    @include respond( bp2) {
+        padding: 0 5rem;
+    }
+    @include respond( bp4) {
+        padding: 0 2rem;
+    }
+    &__titulo,
+    &__titulo>.u-text-small {
+        font-size: 3rem !important;
+        color: $color-primary-dark;
+        font-weight: bold;
+        text-align: center;
+        width: 85rem;
+        padding: 3rem 0;
+    }
+    &__subtitulo {
+        align-self: flex-start;
+        padding-bottom: 1rem;
+    }
+    &__articulo {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        width: 100%;
+        & p {
+            line-height: 1.8;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        & strong {
+            line-height: 1.8;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        & a {
+            line-height: 1.8;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: $color-link;
+            &:hover {
+                color: $color-primary-darkest;
+            }
+        }
+    }
+}

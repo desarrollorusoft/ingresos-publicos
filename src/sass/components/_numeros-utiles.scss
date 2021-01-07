@@ -1,0 +1,63 @@
+.numeros-utiles{
+
+    padding: 2rem 20rem;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-primary-lightest;
+
+
+    @include respond( bp1 ){
+      padding: 2rem 10rem;
+    }
+
+    @include respond( bp2 ){
+      padding: 1rem 5rem;
+    }
+
+    @include respond( bp4 ){
+      padding: 1rem 2rem;
+      flex-wrap:wrap;
+    }
+
+
+    @include respond( bp6 ){
+      min-height: 10rem;
+      font-size: 2.5rem;
+    }
+
+    @include respond( bp7 ){
+      padding: 2rem 0;
+    }
+
+    &__numero{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2rem 0;
+
+        @include respond( bp4){
+          flex: 0 0 33.3333%;
+        }
+
+        @include respond( bp7 ){
+          flex: 0 0 50%;
+        }
+    }
+
+    &__telefono {
+        font-size: 4rem;
+        color: $color-primary-darkest;
+        font-weight: bold;
+    }
+
+    &__nombre {
+        font-size:1.3rem;
+        margin-top:-3px;
+        color:$color-primary-darkest;
+        font-weight: bold;
+
+    }
+
+}

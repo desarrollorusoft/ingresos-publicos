@@ -1,0 +1,24 @@
+<div id="acordeon">
+    <div *ngFor="let acordeon of miTramite.acordeones; let i = index" class="u-margin-top-xs">
+        <app-guia-tramites-comun [acordeon]="acordeon"></app-guia-tramites-comun>
+        <app-guia-tramites-mixtas [acordeon]="acordeon"></app-guia-tramites-mixtas>
+        <app-calendario-arba [acordeon]="acordeon"></app-calendario-arba>
+
+        <app-calendario-cementerio [id]=i [registros]="acordeon.registros"></app-calendario-cementerio>
+        <app-calendario-comun [id]=i [registros]="acordeon.registros"></app-calendario-comun>
+        <app-calendario-mv [id]=i [registros]="acordeon.registros"></app-calendario-mv>
+        <app-calendario-rs-ish [id]=i [registros]="acordeon.registros"></app-calendario-rs-ish>
+        <app-calendario-trimestral [id]=i [registros]="acordeon.registros"></app-calendario-trimestral>
+        <app-calendario-trimestral-oep-antenas [id]=i [registros]="acordeon.registros"></app-calendario-trimestral-oep-antenas>
+        <app-calendario-servicios [id]=i [acordeon]="acordeon"></app-calendario-servicios>
+        <app-calendario-abl [id]=i [registros]="acordeon.registros"></app-calendario-abl>
+
+        <app-normativa-comun [acordeon]="acordeon"></app-normativa-comun>
+        <app-normativa-sin [acordeon]="acordeon"></app-normativa-sin>
+
+        <app-normativa-arba [acordeon]="acordeon"></app-normativa-arba>
+        <app-instructivos [acordeon]="acordeon"></app-instructivos>
+        <app-link-interes [acordeon]="acordeon"></app-link-interes>
+        <app-funciones [acordeon]="acordeon"></app-funciones>
+    </div>
+</div>

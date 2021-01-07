@@ -1,0 +1,30 @@
+<!-- CALENDARIO TRIBUTARIO -->
+<div class="acordeon__contenido" *ngIf="misRegistros">
+    <div class="acordeon__contenedor-acordeon" id="calendarioTributarioABL">
+        <button class="acordeon__boton-acordeon collapsed" data-toggle="collapse" [attr.data-target]="'#'+identificador()" aria-expanded="false" [attr.aria-controls]="identificador()" [innerHTML]="encabezado"></button>
+    </div>
+    <div [id]="identificador()" class="collapse" aria-labelledby="calendarioTributarioABL" data-parent="#acordeon">
+        <div class="acordeon__acordeon-interno ">
+            <div class="acordeon__bajada-calendario u-margin-bottom-sm" *ngIf="bajada">
+                <b [innerHTML]="bajada"></b>
+            </div>
+            <table class="acordeon__tabla-typ">
+                <thead>
+                    <tr>
+                        <th class="u-text-bold u-text-left">Anticipo</th>
+                        <th class="u-text-bold">1° Vencimiento</th>
+                        <th class="u-text-bold">2° Vencimiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let registro of misRegistros">
+                        <td class="u-color-2 u-text-left" [innerHTML]="registro.nombre"></td>
+                        <td class="u-color-2" [innerHTML]="registro.primerVencimiento"></td>
+                        <td class="u-color-2" [innerHTML]="registro.segundoVencimiento"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <a href="https://www.vicentelopez.gov.ar/static-iipp/p/IIPP/calendario/Calendario_Tributario_ALCVPySV.pdf" target="_blank" class="acordeon__acordeon-enlace">Descarg&aacute; la versi&oacute;n para imprimir (PDF)</a>
+    </div>
+</div>

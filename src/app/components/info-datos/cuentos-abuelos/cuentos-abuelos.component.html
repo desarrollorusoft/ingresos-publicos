@@ -1,0 +1,45 @@
+<div class="contenedor-cuentos">
+    <img [src]="cuentos.imgInicial" class="contenedor-cuentos__img">
+
+    <b class="u-margin-top-md contenedor-cuentos__titulo">Descripci&oacute;n</b>
+    <p>
+        Programa de la Secretaría de Salud y Desarrollo Humano de Vicente López para promover el intercambio y transmitir valores positivos entre generaciones. Nuestros abuelos transfieren su experiencia y valores como responsabilidad, solidaridad y cuidado
+        de los bienes comunes mediante los cuentos a niños de jardines de infantes y escuelas primarias.
+    </p>
+    <br>
+    <b class="contenedor-cuentos__titulo">Pequeños Cuentos para Crandes Cambios: “La Morada”</b>
+    <p>Autor: María Silva y Mariano Alejandro Dorr <br> Valores: Derechos y Obligaciones.
+    </p>
+    <br>
+    <b>Pequeños Cuentos para Grandes Cambios II: “Todos para uno y uno para todos”</b>
+    <p>Autores: Daniela Pasik y Martín Camaño<br> Valor: Solidaridad</p>
+    <br>
+    <b class="contenedor-cuentos__titulo">Pequeños Cuentos para Grandes Cambios III: “Tango versus Rock”</b>
+    <p>Autores: Martín Blasco y María Silva <br> Valores: Transmitir experiencias y revalorización de la historia y de los barrios
+    </p>
+    <br>
+    <b class="contenedor-cuentos__titulo">Más información:</b>
+    <a href="http://educacion.agip.gob.ar/audio-cuentos-1.php" [target]="'_blank'">Cuentos AGIP</a>
+    <br>
+    <p class="u-margin-bottom-md">
+        Si querés sumarte al programa, contactate con:<br> correo: cuentosporabuelosvl@gmail.com<br> Tel: 4513 9832/33
+    </p>
+
+    <div class="cuentos__carousel margin-top-sm">
+        <div id="carouselCuentos" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item" [ngClass]="{'active': item===cuentos.carousel[0]}" *ngFor="let item of cuentos.carousel">
+                    <img class="d-block w-100" [src]="item" alt="Banner">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselCuentos" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon flecha-izquierda" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselCuentos" role="button" data-slide="next">
+                <span class="carousel-control-next-icon fas flecha-derecha" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </div>
+</div>

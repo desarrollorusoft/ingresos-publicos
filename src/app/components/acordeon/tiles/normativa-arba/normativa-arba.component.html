@@ -1,0 +1,16 @@
+<!-- NORMATIVA ARBA -->
+<div class="acordeon__contenido" *ngIf="miAcordeon">
+    <div class="acordeon__contenedor-acordeon" id="headingNormativaArba">
+        <button class="acordeon__boton-acordeon collapsed" data-toggle="collapse" data-target="#acordeonNormativaArba" aria-expanded="false" aria-controls="acordeonNormativaArba">
+        Normativa Tributaria
+      </button>
+    </div>
+    <div id="acordeonNormativaArba" class="collapse" aria-labelledby="headingNormativaArba" data-parent="#acordeon">
+        <div class="acordeon__acordeon-interno acordeon__acordeon-interno--texto-izquierda ">
+            <div class="acordeon__normativa">
+                <a target="_blank" [routerLink]="['/info','normativaTributaria']" class="acordeon__link" [target]="'_blank'" style="text-transform: none;">Normativa Tributaria</a>
+                <a href="http://www.arba.com.ar/" class="acordeon__link" [target]="'_blank'" style="text-transform: none;">Normativa (Fuente: ARBA)</a>
+            </div>
+        </div>
+    </div>
+</div>

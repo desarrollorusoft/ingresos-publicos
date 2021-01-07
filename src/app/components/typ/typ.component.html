@@ -1,0 +1,120 @@
+<div class="inicio__carousel u-margin-bottom-md" *ngIf="tramite.banners.length!==0">
+    <div id="carouselInicio" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators inicio__carousel--indicators" [ngClass]="{'inicio__carousel--indicators--sin-linea': tramite.bannerFijo}" >
+            <li data-target="#carouselInicio" [attr.data-slide-to]="i" class="inicio__carousel--item" [ngClass]="{'active': item===tramite.banners[0]}" *ngFor="let item of tramite.banners; let i = index"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item" [ngClass]="{'active': item===tramite.banners[0]}" *ngFor="let item of tramite.banners">
+                <a *ngIf="item.redireccion !== ''" [href]="item.redireccion" [target]="'_blank'">
+                    <img class="d-block w-100 img-fluid" [src]="item.url | domSeguro" alt="Banner">
+                </a>
+                <img *ngIf="item.redireccion === ''" class="d-block w-100 img-fluid" [src]="item.url | domSeguro" alt="Banner">
+            </div>
+        </div>
+        <a class="carousel-control-prev inicio__carousel--control" href="#carouselInicio" role="button" data-slide="prev">
+            <span class="flecha-izquierda" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next inicio__carousel--control" href="#carouselInicio" role="button" data-slide="next">
+            <span class="flecha-derecha" aria-hidden="true"></span>
+        </a>
+    </div>
+</div>
+<div class="banner-fijo" *ngIf="tramite.bannerFijo">
+    <a [href]="tramite.bannerFijo.redireccion" target="_blank">
+        <img [src]="tramite.bannerFijo.url">
+    </a>
+</div>
+<div class="typ">
+    <div class="tramites-pagos">
+        <div class="tramites-pagos__descripcion" [ngClass]="{'tramites-pagos__descripcion--sin-icono': !tramite.icono }">
+            <div class="tramites-pagos__icono u-margin-bottom-sm" *ngIf="tramite.icono">
+                <div class="contenedor-iconos__icono contenedor-iconos__icono--grande">
+                    <img [src]="tramite.icono" [alt]="tramite.titulo" class="contenedor-iconos__img">
+                </div>
+            </div>
+            <div class="tramites-pagos__titulo u-margin-bottom-sm" [innerHTML]="tramite.titulo"></div>
+            <p class="tramites-pagos__texto" *ngIf="tramite.contenido" [innerHTML]="tramite.contenido"></p>
+            <div class="tramites-pagos__contenedor-boton u-margin-top-sm" *ngIf="tramite.botonRedireccion">
+                <label class="u-margin-bottom-xs" *ngIf="tramite.botonRedireccion.encabezado" [innerHTML]="tramite.botonRedireccion.encabezado"></label>
+                <a class="tramites-pagos__link-ir u-margin-bottom-md" *ngIf="tramite.botonRedireccion.titulo" [href]="tramite.botonRedireccion.urlARedirigir" target="_blank" [innerHTML]="tramite.botonRedireccion.titulo"></a>
+            </div>
+        </div>
+        <div class="tramites-pagos__acordeon">
+            <app-acordeon [miTramite]="tramite"></app-acordeon>
+        </div>
+    </div>
+
+    <div id="pagos-habilitados" class="pagos-habilitados" *ngIf="mediosPago">
+        <div class="pagos-habilitados__contenedor" *ngIf="mediosPago.pagoOnline.length > 0">
+            <div class="pagos-habilitados__contenedor-titulo">
+
+                <div class="pagos-habilitados__titulo">Pago Online</div>
+            </div>
+            <div class="pagos-habilitados__contenedor-iconos" *ngFor="let fila of mediosPago.pagoOnline">
+                <div *ngFor="let medio of fila.medios">
+
+                    <figure class="pagos-habilitados__contenedor-img" [ngClass]="{'u-scale-11':medio.clave === 'BANCO_PROVINCIA', 'u-move-up-1rem': medio.clave === 'SUPERVIELLE'}" *ngIf="esIcono(medio)">
+                        <img [src]="medio.url" [ngClass]="{'pagos-habilitados__img--especial':medio.claseEspecial}" class="pagos-habilitados__img">
+                    </figure>
+
+                    <a [routerLink]="medio.url" class="pagos-habilitados__link" [innerHTML]="medio.nombre" *ngIf="!esIcono(medio) && medio.url"></a>
+                    <span class="pagos-habilitados__texto" *ngIf="!esIcono(medio) && !medio.url" [innerHTML]="medio.nombre"></span>
+                </div>
+
+            </div>
+        </div>
+        <div class="pagos-habilitados__contenedor" *ngIf="mediosPago.debitoAutomatico.length > 0">
+            <div class="pagos-habilitados__contenedor-titulo">
+
+                <div class="pagos-habilitados__titulo">D&eacute;bito Automatico</div>
+            </div>
+            <div class="pagos-habilitados__contenedor-iconos u-padding-right-lg" *ngFor="let fila of mediosPago.debitoAutomatico">
+                <div *ngFor="let medio of fila.medios">
+
+                    <figure class="pagos-habilitados__contenedor-img" [ngClass]="{'u-scale-11':medio.clave === 'BANCO_PROVINCIA', 'u-move-up-1rem': medio.clave === 'SUPERVIELLE'}" *ngIf="esIcono(medio)">
+                        <img [src]="medio.url" [ngClass]="{'pagos-habilitados__img--especial':medio.claseEspecial}" class="pagos-habilitados__img">
+                    </figure>
+
+                    <a [routerLink]="medio.url" class="pagos-habilitados__link" [innerHTML]="medio.nombre" *ngIf="!esIcono(medio) && medio.url"></a>
+                    <span class="pagos-habilitados__texto" *ngIf="!esIcono(medio) && !medio.url" [innerHTML]="medio.nombre"></span>
+                </div>
+
+            </div>
+        </div>
+        <div class="pagos-habilitados__contenedor" *ngIf="mediosPago.pagoPresencial.length > 0">
+            <div class="pagos-habilitados__contenedor-titulo">
+                <div class="pagos-habilitados__titulo">Pago Presencial</div>
+                <div class="pagos-habilitados__subtitulo" *ngIf="esCementerio()">(Con recibos emitidos por Sistema SAT)</div>
+            </div>
+            <div class="pagos-habilitados__contenedor-iconos" *ngFor="let fila of mediosPago.pagoPresencial">
+                <div *ngFor="let medio of fila.medios">
+
+                    <figure class="pagos-habilitados__contenedor-img" [ngClass]="{'u-scale-12':medio.clave === 'BANCO_PROVINCIA', 'u-move-up-1rem': medio.clave === 'SUPERVIELLE'}" *ngIf="esIcono(medio)">
+                        <img [src]="medio.url" [ngClass]="{'pagos-habilitados__img--especial':medio.claseEspecial}" class="pagos-habilitados__img">
+                    </figure>
+
+                    <a [routerLink]="medio.url" class="pagos-habilitados__link" [innerHTML]="medio.nombre" *ngIf="!esIcono(medio) && medio.url"></a>
+                    <span class="pagos-habilitados__texto" *ngIf="!esIcono(medio) && !medio.url" [innerHTML]="medio.nombre"></span>
+                </div>
+
+            </div>
+        </div>
+        <div class="pagos-habilitados__contenedor" *ngIf="mediosPago.pagoTelefonico.length > 0">
+            <div class="pagos-habilitados__contenedor-titulo">
+                <div class="pagos-habilitados__titulo">Pago Telef&oacute;nico</div>
+            </div>
+            <div class="pagos-habilitados__contenedor-iconos" *ngFor="let fila of mediosPago.pagoTelefonico">
+                <div *ngFor="let medio of fila.medios">
+
+                    <figure class="pagos-habilitados__contenedor-img" [ngClass]="{'u-scale-11':medio.clave === 'BANCO_PROVINCIA', 'u-move-up-1rem': medio.clave === 'SUPERVIELLE'}" *ngIf="esIcono(medio)">
+                        <img [src]="medio.url" [ngClass]="{'pagos-habilitados__img--especial':medio.claseEspecial}" class="pagos-habilitados__img">
+                    </figure>
+
+                    <a [routerLink]="medio.url" class="pagos-habilitados__link" [innerHTML]="medio.nombre" *ngIf="!esIcono(medio) && medio.url"></a>
+                    <span class="pagos-habilitados__texto" *ngIf="!esIcono(medio) && !medio.url" [innerHTML]="medio.nombre"></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

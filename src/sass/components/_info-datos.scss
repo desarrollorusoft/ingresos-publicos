@@ -1,0 +1,17 @@
+.info-datos {
+    &__descripcion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 45rem;
+        height: 30rem;
+        &--mas-chico {
+            height: 15rem;
+        }
+        @include respond( bp7) {
+            min-height: 0;
+            height: auto;
+        }
+    }
+}

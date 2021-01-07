@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "sass/abstract/variables";
+@import "sass/abstract/functions";
+@import "sass/abstract/mixins";
+
+//BASE
+@import "sass/base/base";
+@import "sass/base/tipografia";
+@import "sass/base/keyframes";
+@import "sass/base/utilities";
+
+//LAYOUTS
+@import "sass/layout/header";
+@import "sass/layout/footer";
+@import "sass/layout/main";
+@import "sass/layout/typ";
+
+//COMPONENTS
+@import "sass/components/encabezado";
+@import "sass/components/navbar";
+@import "sass/components/consulta";
+@import "sass/components/encuesta";
+@import "sass/components/numeros-utiles";
+@import "sass/components/fin-footer";
+@import "sass/components/inicio";
+@import "sass/components/contenedor-iconos";
+@import "sass/components/btn";
+@import "sass/components/tramites-pagos";
+@import "sass/components/pagos-habilitados";
+@import "sass/components/acordeon";
+@import "sass/components/info-datos";
+@import "sass/components/contenedor-preguntas";
+@import "sass/components/contenedor-sede";
+@import "sass/components/contenedor-delegaciones";
+@import "sass/components/contenedor-links";
+@import "sass/components/contenedor-medios";
+@import "sass/components/contenedor-cuentos";
+@import "sass/components/contenedor-gobierno";
+@import "sass/components/equipo";
+@import "sass/components/container-novedades";
+@import "sass/components/contenedor-novedad";
+@import "sass/components/calendario-tributario";
+@import "sass/components/flecha";
+

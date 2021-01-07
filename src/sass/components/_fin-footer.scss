@@ -1,0 +1,270 @@
+.fin-footer {
+  display:flex;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  background-color: $color-primary-darkest;
+  width:100%;
+
+  @include respond( bp2 ){
+    padding-top: 2.5rem;
+    padding-bottom:0;
+  }
+
+  @include respond( bp3 ){
+    padding-top: 1rem;
+  }
+
+  & > * {
+    flex:1;
+  }
+
+  &__seccion{
+    padding: 0 2rem;
+    width:25rem;
+
+    &--typ{
+      padding-left:0;
+    }
+
+    &--sin-lista{
+      padding-right:0;
+    }
+
+    &--id{
+      margin-bottom: 2rem;
+
+      @include respond( bp2 ){
+        margin-bottom:0;
+      }
+    }
+
+
+    @include respond( bp4 ){
+      padding: 0 .5rem;
+    }
+
+    @include respond( bp5 ){
+
+      flex: 0 0 100%;
+
+      &--sin-lista{
+        order:1;
+      }
+
+      &--dyp{
+        order:2;
+      }
+
+      &--typ{
+        order:3;
+      }
+
+      &--ot{
+        order:4;
+      }
+
+    }
+
+    @include respond( bp6 ){
+      flex: 0 0 100%;
+
+
+      &--typ{
+        order:1;
+      }
+
+      &--dyp{
+        order:2
+      }
+
+      &--id{
+        order:3
+      }
+
+      &--ot {
+        order:4;
+      }
+
+      &--typ,
+      &--dyp,
+      &--ot,
+      &--sin-lista{
+        flex: 0 0 100%;
+
+        & > ul {
+          display:flex;
+          flex-wrap: wrap;
+          justify-content:space-between;
+          align-items: center;
+          & > *{
+            flex: 0 0 100%;
+            margin-bottom: 2rem;
+            text-align: left;
+
+            & br{
+              display:none;
+            }
+          }
+        }
+      }
+
+      &--id > ul{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        & > *{
+          flex: 0 0 100%;
+        }
+      }
+
+      &--ot{
+        order:4;
+      }
+
+      &--sin-lista{
+        order:5;
+      }
+    }
+
+    @include respond( bp7 ){
+      flex: 0 0 100%;
+
+      &--typ,
+      &--dyp,
+      &--id,
+      &--ot{
+
+        & > ul {
+          display:flex;
+          flex-wrap: wrap;
+          justify-content:space-between;
+          align-items: center;
+          & > *{
+            flex: 0 0 100%;
+            margin-bottom: 2rem;
+            text-align: left;
+
+            & br{
+              display:none;
+            }
+          }
+        }
+      }
+    }
+
+    &--columna{
+      flex-direction: column;
+    }
+  }
+
+  &__menu {
+    display:flex;
+    justify-content: space-between;
+    padding: 0 20rem 3rem 20rem;
+    width:100%;
+
+    @include respond(bp1){
+      padding: 0 10rem 3rem 10rem;
+    }
+
+    @include respond( bp2 ){
+      padding: 0 5rem 1rem 5rem;
+    }
+
+    @include respond( bp4 ){
+      padding: 1rem;
+    }
+
+    @include respond( bp5 ){
+      flex-wrap: wrap;
+       
+      & > *{
+        flex: 0 0 100%;
+      }
+    }
+
+    @include respond( bp6 ){
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+    }
+  }
+
+  &__columna{
+    &:first-child{
+      padding-right:2rem;
+      flex: 0 0 40%;
+    }
+    &:last-child{
+      flex: 0 0 40%;
+    }
+  }
+
+  &__titulo-menu{
+    color: $color-white;
+    width:100%;
+    padding:1rem 0;
+    font-size: $default-font-size;
+    line-height: 1.2;
+    font-weight: 700;
+    @include respond( bp5 ){
+      font-size: 2.2rem;
+    }
+
+  }
+
+  &__lista{
+    list-style-type: none;
+  }
+
+  &__item {
+
+    a:link,
+    a:active,
+    a:visited {
+      text-decoration: none;
+      color: $color-white;
+      font-size: 1.4rem;
+      font-weight: 300;
+      width:100%;
+      display:block;
+
+      & {
+        padding-bottom: 2rem;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      @include respond( bp5 ){
+        font-size: 2rem;
+        padding: .5rem 0;
+      }
+    }
+
+  }
+
+  &__titulo-link:link,
+  &__titulo-link:active,
+  &__titulo-link:visited {
+    text-decoration: none;
+    color: $color-white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+}
+
+.mapouter{
+  text-align:right;
+  height:40rem;
+  width:50rem;}
+  .gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    height:40rem;
+    width:60rem;}

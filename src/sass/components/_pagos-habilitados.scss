@@ -1,0 +1,96 @@
+.pagos-habilitados {
+    background-color: $color-secondary-lightest;
+    width: 100%;
+    padding-top: 5rem;
+    &__contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        position: relative;
+        margin-bottom: 5rem;
+        &:not(:first-child):before {
+            content: "";
+            display: inline-block;
+            width: calc(100% - 40rem);
+            height: 1px;
+            background-color: $color-grey-light-4;
+            position: absolute;
+            top: -4rem;
+        }
+    }
+    &__titulo {
+        text-transform: capitalize;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $color-grey-dark-3;
+    }
+    &__subtitulo {
+        
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $color-grey-dark-3;
+    }
+    &__contenedor-titulo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        margin-bottom: 3rem;
+    }
+    &__contenedor-iconos {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5rem;
+        flex-wrap: wrap;
+        &--column {
+            flex-direction: column;
+        }
+        &--wrap {
+            @include respond( bp3) {
+                flex-wrap: wrap;
+                & * {
+                    flex: 0 0 25%;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+    &__contenedor-img {
+        padding: 0 3rem;
+    }
+    &__img {
+        width: 13rem;
+        &--especial {
+            width: auto;
+            height: 5rem;
+            ;
+        }
+    }
+    &__link:link,
+    &__link:visited {
+        text-decoration: none;
+        font-size: 1.4rem;
+    }
+    &__texto {
+        font-size: 1.4rem;
+        padding: 0 4rem 3rem 4rem;
+        font-weight: 600;
+    }
+    &__iconos {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    &__link {
+        padding: 0 4rem 3rem 4rem;
+        font-size: $default-font-size;
+        font-weight: 600;
+    }
+}
+
+;

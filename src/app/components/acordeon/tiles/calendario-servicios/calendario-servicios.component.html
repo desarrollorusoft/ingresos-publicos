@@ -1,0 +1,21 @@
+<!-- CALENDARIO TRIBUTARIO -->
+<div class="acordeon__contenido" *ngIf="miAcordeon">
+    <div class="acordeon__contenedor-acordeon" id="calendarioTributario">
+        <button class="acordeon__boton-acordeon collapsed" data-toggle="collapse" data-target="#calendarioTributarioCollapse" aria-expanded="false" aria-controls="calendarioTributarioCollapse" [innerHTML]="encabezado"></button>
+    </div>
+    <div id="calendarioTributarioCollapse" class="collapse" aria-labelledby="calendarioTributario" data-parent="#acordeon">
+        <div class="acordeon__acordeon-interno ">
+            <table class="acordeon__tabla-typ">
+                <div class="acordeon__bajada-calendario u-margin-bottom-sm" *ngIf="bajada">
+                    <b [innerHTML]="bajada"></b>
+                </div>
+                <tbody>
+                    <tr>
+                        <td class="u-color-1 u-text-bold">Presentación Declaración Jurada Anual y Pago</td>
+                        <td class="u-color-2" [innerHTML]="miAcordeon.fechaDeclaracion"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

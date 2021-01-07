@@ -1,0 +1,53 @@
+<h3 class="heading-3 heading-3--secondary inicio__titulo u-margin-bottom-sm u-margin-top-md">Turnos Online</h3>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-12">
+      <br><br>
+      <div class="mb-3" *ngFor="let o of options">
+        <button class="btn btn-primary btn-block" (click)="select(o)">{{ o }}</button>
+      </div>
+      <br><br>
+    </div>
+    <div class="col-md-8 col-12">
+      <h3 class="mb-4" *ngIf="!selected"><i>Seleccione una opción</i></h3>
+      <h3 class="mb-4"><b>{{selected}}</b></h3>
+      <div *ngIf="selected">
+        <span [ngSwitch]="selected">
+          <p *ngSwitchCase="'Ingreso y actualizaciones de Cert. Parcelarios'">
+            <iframe name="iframe1" id="iframe1" width="100%" height="700" src="https://turnosmvl.vicentelopez.gov.ar/#/company/Municipalidad%20de%20Vicente%20Lopez/schedules/CERTIFICADOS%20PARCELARIOS/branches/SECRETAR%C3%8DA%20DE%20INGRESOS%20P%C3%9ABLICOS/days"></iframe>
+          </p>
+          <p *ngSwitchCase="'Consultas Técnicas de Catastro'">
+            <iframe name="iframe1" id="iframe1" width="100%" height="700" src="https://turnosmvl.vicentelopez.gov.ar/#/company/Municipalidad%20de%20Vicente%20Lopez/schedules/RETIRO%20CERT.%20PARCELARIOS/branches/SECRETAR%C3%8DA%20DE%20INGRESOS%20P%C3%9ABLICOS/days"></iframe>
+          </p>
+          <p *ngSwitchCase="'Certificados de Escribano'">
+            <iframe name="iframe1" id="iframe1" width="100%" height="700" src="https://turnosmvl.vicentelopez.gov.ar/#/company/Municipalidad%20de%20Vicente%20Lopez/schedules/CERTIFICADOS%20ESCRIBANOS/branches/SECRETAR%C3%8DA%20DE%20INGRESOS%20P%C3%9ABLICOS/days"></iframe>
+          </p>
+
+          
+          <p *ngSwitchCase="'Derecho de Construcción'">
+            <iframe name="iframe1" id="iframe1" width="100%" height="700" src="https://turnosmvl.vicentelopez.gov.ar/#/company/Municipalidad%20de%20Vicente%20Lopez/schedules/CATASTRO-DER.DE%20CONSTRUCCION/branches/SECRETAR%C3%8DA%20DE%20INGRESOS%20P%C3%9ABLICOS/days"></iframe>
+          </p>
+          
+          
+          <p *ngSwitchCase="'Publicidad Y Propaganda'">
+            <iframe name="iframe1" id="iframe1" width="100%" height="700" src="https://turnosmvl.vicentelopez.gov.ar/#/company/Municipalidad%20de%20Vicente%20Lopez/schedules/PUBLICIDAD%20Y%20PROPAGANDA/branches/SECRETAR%C3%8DA%20DE%20INGRESOS%20P%C3%9ABLICOS/days"></iframe>
+          </p>
+          <p *ngSwitchCase="'Fiscalización Tributaria - Empresas'">
+            <iframe name="iframe1" id="iframe1" width="100%" height="700" src="https://turnosmvl.vicentelopez.gov.ar/#/company/Municipalidad%20de%20Vicente%20Lopez/schedules/FISCALIZACI%C3%93N%20TRIBUTARIA%20-%20EMPRESAS/branches/SECRETAR%C3%8DA%20DE%20INGRESOS%20P%C3%9ABLICOS/days"></iframe>
+          </p>
+          <p *ngSwitchCase="'Fiscalización Tributaria - Unipersonales'">
+            <iframe name="iframe1" id="iframe1" width="100%" height="700" src="https://turnosmvl.vicentelopez.gov.ar/#/company/Municipalidad%20de%20Vicente%20Lopez/schedules/FISCALIZACION%20TRIBUTARIA%20-%20UNIPERSONALES/branches/SECRETAR%C3%8DA%20DE%20INGRESOS%20P%C3%9ABLICOS/days"></iframe>
+          </p>
+          
+         
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contenedor-turnos mt-5">
+  <hr>
+  
+</div>

@@ -1,0 +1,123 @@
+{
+	"abl": {
+		"title": "A.L.S.V.P. y S.V y C.P.C.",
+		"months": [
+			{"title":"Enero","date": "21 / 01 / 2020","secondDate": "28 / 01 / 2020"},
+			{"title":"Febrero","date": "20 / 02 / 2020","secondDate": "27 / 02 / 2020"},
+			{"title":"Marzo","date": "18 / 03 / 2020","secondDate": "25 / 03 / 2020"},
+      {"title":"Abril","date": "14 / 04 / 2020","secondDate": "21 / 04 / 2020"},
+      {"title":"Mayo","date": "12 / 05 / 2020","secondDate": "19 / 05 / 2020"},
+      {"title":"Junio","date": "11 / 06 / 2020","secondDate": "18 / 06 / 2020"},
+      {"title":"Julio","date": "14 / 07 / 2020","secondDate": "21 / 07 / 2020"},
+      {"title":"Agosto","date":"12 / 08 / 2020","secondDate":"19 / 08 / 2020"},
+      {"title":"Septiembre","date": "15 / 09 / 2020","secondDate": "22 / 09 / 2020"},
+			{"title":"Octubre","date": "13 / 10 / 2020","secondDate": "20 / 10 / 2020"},
+			{"title":"Noviembre","date": "12 / 11 / 2020","secondDate": "19 / 11 / 2020"},
+			{"title":"Diciembre","date": "15 / 12 / 2020","secondDate": "22 / 12 / 2020"}
+		]
+	},
+	"auto": {
+		"title": "Automotores",
+		"months": [
+			{"title": "Cuota 1 o Pago Anual (Cuota 01, 02 y 03)","date": "08 / 07 / 2020","secondDate": "15 / 07 / 2020"},
+			{"title": "Cuota 2 o Saldo Anual (Cuota 02 y 03)","date":"04 / 09 / 2020","secondDate": "11 / 09 / 2020"},
+			{"title":"Cuota 3","date":"04 / 12 / 2020","secondDate":"11 / 12 / 2020"}
+		]
+	},
+	"moto": {
+		"title": "Motovehículos",
+		"months": [
+			{"title": "01 o Pago Anual (Cuota 01 y 02)","date": "08 / 07 / 2020","secondaDate": "15 / 07 / 2020"},
+			{"title": "02","date": "04 / 12 / 2020","secondaDate": "11 / 12 / 2020"}
+		]
+  },
+	"ish": {
+		"title": "Ispección por Seguridad e Higuiene",
+		"months": [
+			{"title":"Enero","date":"20 / 02 / 2020"},
+      {"title":"Febrero","date":"20 / 03 / 2020"},
+      {"title":"Marzo","date":"20 / 04 / 2020"},
+      {"title":"Abril","date":"20 / 05 / 2020"},
+      {"title":"Mayo","date":"19 / 06 / 2020"},
+      {"title":"Junio","date":"20 / 07 / 2020"},
+      {"title":"Julio","date":"20 / 08 / 2020"},
+      {"title":"Agosto","date":"21 / 09 / 2020"},
+      {"title":"Septiembre","date":"20 / 10 / 2020"},
+      {"title":"Octubre","date": "20 / 11 / 2020"},
+      {"title":"Noviembre","date": "21 / 12 / 2020"},
+      {"title":"Diciembre","date": "20 / 01 / 2021"}
+		]
+  },
+	"rs": {
+		"title": "Régimen Simplificado",
+		"months": [
+			{"title":"Enero","date":"20 / 02 / 2020"},
+      {"title":"Febrero","date":"20 / 03 / 2020"},
+      {"title":"Marzo","date":"20 / 04 / 2020"},
+      {"title":"Abril","date":"20 / 05 / 2020"},
+      {"title":"Mayo","date":"19 / 06 / 2020"},
+      {"title":"Junio","date":"20 / 07 / 2020"},
+      {"title":"Julio","date":"20 / 08 / 2020"},
+      {"title":"Agosto","date":"21 / 09 / 2020"},
+      {"title":"Septiembre","date":"20 / 10 / 2020"},
+      {"title":"Octubre","date": "20 / 11 / 2020"},
+      {"title":"Noviembre","date": "21 / 12 / 2020"},
+      {"title":"Diciembre","date": "20 / 01 / 2021"}
+		]
+  }"mv": {
+		"title": "Matenimiento Vial",
+		"months": [
+			{"title":"Enero","date":"06 / 02 / 2020","secondDate":"07 / 02 / 2020"},
+      {"title":"Febrero","date":"05 / 03 / 2020","secondDate":"06 / 03 / 2020"},
+      {"title":"Marzo","date":"07 / 04 / 2020","secondDate":"08 / 04 / 2020"},
+      {"title":"Abril","date":"07 / 05 / 2020","secondDate":"08 / 05 / 2020"},
+      {"title":"Mayo","date":"08 / 06 / 2020","secondDate":"09 / 06 / 2020"},
+      {"title":"Junio","date":"07 / 07 / 2020","secondDate":"08 / 07 / 2020"},
+      {"title":"Julio","date":"06 / 08 / 2020","secondDate":"07 / 08 / 2020"},
+      {"title":"Agosto","date":"07 / 09 / 2020","secondDate":"08 / 09 / 2020"},
+      {"title":"Septiembre","date":"07 / 10 / 2020","secondDate":"08 / 10 / 2020"},
+      {"title":"Octubre","date":"05 / 11 / 2020","secondDate":"06 / 11 / 2020"},
+      {"title":"Noviembre","date":"09 / 12 / 2020","secondDate":"10 / 12 / 2020"},
+      {"title":"Diciembre","date":"07 / 01 / 2021","secondDate":"08 / 01 / 2021"},
+		]
+  }"antenas": {
+		"title": "Emplazamiento y/o Verificaci&oacute;n de Antenas",
+		"months": [
+			{"title":"Cuota 1","date":"16 / 04 / 2020"},
+      {"title":"Cuota 2","date":"16 / 07 / 2020"},
+      {"title":"Cuota 3","date":"15 / 10 / 2020"},
+      {"title":"Cuota 4","date":"30 / 12 / 2020"}
+		]
+  },
+  "pyp": {
+		"title": "Publicidad y Propaganda",
+		"months": [
+			{"title":"Cuota 1","date":"16 / 04 / 2020"},
+      {"title":"Cuota 2","date":"16 / 07 / 2020"},
+      {"title":"Cuota 3","date":"15 / 10 / 2020"},
+      {"title":"Cuota 4","date":"30 / 12 / 2020"}
+		]
+  },
+  "oep": {
+		"title": "Ocupación o Uso de Espacios Públicos",
+		"months": [
+			{"title":"Cuota 1","date":"16 / 04 / 2020"},
+      {"title":"Cuota 2","date":"16 / 07 / 2020"},
+      {"title":"Cuota 3","date":"15 / 10 / 2020"},
+      {"title":"Cuota 4","date":"30 / 12 / 2020"}
+		]
+  },
+  "oep": {
+		"title": "Derechos de Cementerio",
+		"months": [
+			{"title":"Pago Anual (Conservación de Infraestructura del Cementerio para <br>propietarios o concesionarios de bóvedas, panteones o criptas)","date":"29 / 06 / 2020"},
+      {"title":"Pago Anual de Cuidador","date":"29 / 06 / 2020"}
+		]
+  },
+  "sv": {
+		"title": "Servicios Varios",
+		"months": [
+			{"title":"Pago Anual","date":"28 / 01 / 2020"}
+		]
+  }
+}

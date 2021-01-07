@@ -1,0 +1,15 @@
+<!-- CALENDARIO ARBA -->
+<div class="acordeon__contenido" *ngIf="miAcodeon">
+    <div class="acordeon__contenedor-acordeon" id="headingCalendarioArba">
+        <button class="acordeon__boton-acordeon collapsed" data-toggle="collapse" data-target="#acordeonCalendarioArba" aria-expanded="false" aria-controls="acordeonCalendarioArba">
+        Calendario Tributario
+      </button>
+    </div>
+    <div id="acordeonCalendarioArba" class="collapse" aria-labelledby="headingCalendarioArba" data-parent="#acordeon">
+        <div class="acordeon__acordeon-interno acordeon__acordeon-interno--texto-izquierda ">
+            <div class="acordeon__normativa">
+                <a href="http://www.arba.com.ar/" class="acordeon__link" [target]="'_blank'" style="text-transform: none;">Calendario (Fuente: ARBA)</a>
+            </div>
+        </div>
+    </div>
+</div>

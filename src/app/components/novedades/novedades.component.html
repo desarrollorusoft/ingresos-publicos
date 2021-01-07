@@ -1,0 +1,8 @@
+<div class="container-novedades">
+  <div class="container-novedades__titulo">Novedades</div>
+  <div class="container-novedades__lista">
+    <div class="container-novedades__novedad u-margin-top-xs" *ngFor="let novedad of novedades" >
+      <app-articulo [novedad]="novedad"></app-articulo>
+    </div>
+  </div>
+</div>

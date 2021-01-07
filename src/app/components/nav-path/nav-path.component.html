@@ -1,0 +1,9 @@
+<div class="navbar__path" *ngIf="meMuestro()">
+
+  <div class="navbar__repetible" *ngFor="let path of rutas" >
+    <a class="navbar__path--link" [routerLink]="path.url" [innerHTML]="path.nombre" *ngIf="!esActivo(path)"></a>
+    <span class="fas fa-angle-right u-margin-right-xs navbar__path--flecha" *ngIf="path !== rutas[rutas.length-1]" ></span>
+    <span class="navbar__path--active" [innerHTML]="path.nombre" *ngIf="esActivo(path)" ></span>
+  </div>
+
+</div>

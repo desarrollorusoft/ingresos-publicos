@@ -1,0 +1,17 @@
+* {
+    font-size:1.4rem;
+    line-height: 1.7;
+}
+
+h4 b{
+    color:#011762;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+ul.visiones {
+    & > li {
+        margin-left: 2rem;
+        padding-left: 1rem;
+    }
+}

@@ -1,0 +1,34 @@
+<div id="acordeon">
+
+  <div class="acordeon__contenido" *ngFor="let categoria of categoriasPreguntas; let i = index">
+
+    <div class="acordeon__contenedor-acordeon" [id]="categoria.id">
+      <button class="acordeon__boton-acordeon collapsed u-text-bold acordeon__texto-boton--grande" data-toggle="collapse"
+        [attr.data-target]="'#'+categoria.id+'-categoriaPreguntaCollapse'" aria-expanded="false" [attr.aria-controls]="categoria.id+'-categoriaPreguntaCollapse'"
+        [innerHTML]="categoria.titulo"></button>
+    </div>
+    <div [id]="categoria.id+'-categoriaPreguntaCollapse'" class="collapse" rel="buscable" [attr.aria-labelledby]="categoria.id+'-categoriaPregunta'"
+      data-parent="#acordeon">
+      <div class="contedor_preguntas">
+        <div class="u-margin-bottom-sm" *ngIf="categoria.id=='mediosLugarPago'">
+          <app-medios-pago ></app-medios-pago>
+        </div>
+        <div class="contendor-pregunta" *ngFor="let pregunta of categoria.lista">
+
+          <div rel="contenido-buscable">
+            <h4 [id]="pregunta.id"><b [innerHTML]="pregunta.encabezado"></b></h4>
+            <p *ngIf="pregunta.detalle" [innerHTML]="pregunta.detalle"></p>
+          </div>
+        </div>
+
+        <div class="u-margin-top-sm">
+          <a href="https://www.vicentelopez.gov.ar/SAT/pages/externos/formulario_consultas.xhtml" class="contenedor-preguntas__link"
+            target="_blank">
+            <span *ngIf="categoria.lista.length == 0">Hac&eacute; tus consultas aqu&iacute;</span>
+            <span *ngIf="categoria.lista.length > 0">Para m&aacute;s consultas, ingres&aacute; aqu&iacute;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

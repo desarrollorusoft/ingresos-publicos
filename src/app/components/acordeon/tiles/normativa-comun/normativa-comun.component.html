@@ -1,0 +1,28 @@
+<!-- NORAMTIVA TRIBUTARIA -->
+<div class="acordeon__contenido" *ngIf="miAcordeon">
+    <div class="acordeon__contenedor-acordeon" id="headingNormativa">
+        <button class="acordeon__boton-acordeon collapsed" data-toggle="collapse" data-target="#acordeonNormativa" aria-expanded="false" aria-controls="acordeonNormativa">
+        Normativa Tributaria
+      </button>
+    </div>
+    <div id="acordeonNormativa" class="collapse" aria-labelledby="headingNormativa" data-parent="#acordeon">
+        <div class="acordeon__acordeon-interno acordeon__acordeon-interno--texto-izquierda ">
+            <div class="acordeon__normativa" *ngFor="let registro of miAcordeon.registros">
+                <div *ngFor="let normativa of registro.normativas">
+                    
+                    <a *ngIf="normativa.url" [href]="normativa.url" target="_blank" class="acordeon__link u-margin-top-sm">
+                        <h4 class="titulo" [innerHTML]="normativa.titulo"></h4>
+                    </a>
+                    <h4 *ngIf="!normativa.url" class="titulo u-margin-top-sm" [innerHTML]="normativa.titulo"></h4>
+                    <div class="contendor-normativa__documentos" *ngFor="let documento of normativa.documentos">
+                        <label *ngIf="!documento.link" [innerHTML]="documento.titulo" style="font-size:1.1rem;"></label>
+                        <a *ngIf="documento.link" class="link" [href]="documento.link" target="_blank" [innerHTML]="documento.titulo"></a>
+                    </div>
+                    
+                </div>
+                <br>
+                <a target="_blank" [routerLink]="['/info','normativaTributaria']" class="acordeon__link" [target]="'_blank'" style="text-transform: none;">Normativa Tributaria</a>
+            </div>
+        </div>
+    </div>
+</div>

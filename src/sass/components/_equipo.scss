@@ -1,0 +1,64 @@
+.equipo {
+    &__contenedor {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item {
+        flex: 0 0 33%;
+        padding: 1rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.4rem;
+    }
+    &__titulo {
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+    &__texto {
+        margin: 0;
+        padding: .2rem 0;
+        color: $color-grey-dark-2;
+        max-width: 25rem;
+        text-align: center;
+    }
+    &__img {
+        width: 20rem;
+        height: 20rem;
+        border-radius: 50%;
+        overflow: hidden;
+        & img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__contenedor--1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__contenedor-organigrama {
+        display: flex;
+        align-items: center;
+        width: 120%;
+        @include respond( bp1) {
+            width: 100%;
+        }
+    }
+    &__organigrama {
+        width: 100%;
+        @include respond( bp1) {
+            height: 100%;
+        }
+    }
+    &__carousel {
+        &--pie {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $color-secondary-lightest;
+            font-size: 1.4rem;
+            height: 3rem;
+        }
+    }
+}

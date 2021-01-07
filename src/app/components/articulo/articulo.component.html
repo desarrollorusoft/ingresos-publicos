@@ -1,0 +1,19 @@
+<a class="inicio__novedades__noticia" [routerLink]="['/novedades','detalle',novedad.id]">
+    <div class="inicio__novedades__titulo">
+        <h3 class="heading-3 heading-3--primary-dark" [innerHTML]="novedad.tituloMin"></h3>
+    </div>
+    <div class="inicio__novedades__noticia--contenedor-subtitulo">
+        <div class="inicio__novedades__subtitulo inicio__novedades__subtitulo--fecha">
+            <img src="assets/png/iconos-calendario-sf.png" alt="" class="inicio__novedades__icono" *ngIf="novedad.fecha.length > 0">
+            <p class="inicio__novedades__texto" [innerHTML]="novedad.fecha"></p>
+        </div>
+        <div class="inicio__novedades__subtitulo inicio__novedades__subtitulo--lugar">
+            <img src="assets/png/Iconos-location.png" alt="" class="inicio__novedades__icono" *ngIf="novedad.lugarAbreviado.length > 0">
+            <p class="inicio__novedades__texto" [innerHTML]="novedad.lugarAbreviado"></p>
+        </div>
+    </div>
+
+    <figure class="inicio__novedades__noticia--contenedor-img">
+        <img [src]="novedad.urlImagenPrincipal| domSeguro" [alt]="novedad.encabezado" class="inicio__novedades__noticia--img">
+    </figure>
+</a>

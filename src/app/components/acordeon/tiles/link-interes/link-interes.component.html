@@ -1,0 +1,17 @@
+<!-- LINKS INTERES -->
+<div class="acordeon__contenido" *ngIf="miAcordeon">
+  <div class="acordeon__contenedor-acordeon" id="headingLinks">
+      <button class="acordeon__boton-acordeon collapsed" data-toggle="collapse" data-target="#acordeonLinks" aria-expanded="false" aria-controls="acordeonLinks">
+        Links de Inter&eacute;s
+      </button>
+  </div>
+  <div id="acordeonLinks" class="collapse" aria-labelledby="headingLinks" data-parent="#acordeon">
+    <div class="acordeon__acordeon-interno acordeon__acordeon-interno--texto-izquierda " 
+         *ngFor="let registro of miAcordeon.registros">
+        <div class="acordeon__titulo-normativa">{{ registro.nombre }}</div>
+        <div class="acordeon__normativa">
+          <a href="{{ registro.urlEspecifica }}" target="_blank" class="acordeon__link">{{ registro.nombreUrlEspecifica}}</a>
+        </div>
+    </div>
+  </div>
+</div>

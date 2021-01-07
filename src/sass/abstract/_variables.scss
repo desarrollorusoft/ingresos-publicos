@@ -1,0 +1,70 @@
+
+//COLORS
+$color-primary-lightest: #ffffff;
+$color-secondary-lightest: #F1F2F2;
+$color-primary: #2C91FB;
+$color-primary-dark:#0D47A1;
+$color-primary-darkest: #011762;
+$color-secondary: #2b61ff;
+$color-tertiary: #019687;
+$color-fourth: #021366;
+
+$color-link:#2962FF;
+
+
+$color-grey-light-1: #f0f0f0;
+$color-grey-light-3: #e0e0e0;
+$color-grey-light-2: #d0d0d0;
+$color-grey-light-4: #b0b0b0;
+$color-grey-mvl:#808285;
+
+$color-grey-dark-1: #333;
+$color-grey-dark-2: #474648;
+$color-grey-dark-3: #999;
+
+
+$color-white: #fff;
+$color-black: #000;
+
+
+
+//FONT SIZE
+$default-font-size: 1.6rem;
+$font-size-sm: 1.4rem;
+$font-size-lg: 1.8rem;
+
+// FONT FAMILY
+$default-font: "Open Sans",sans-serif;
+
+
+// BORDER-RADIUS
+$border-radius-small: 3px;
+
+// MARGIN
+
+$margin-xl: 10rem;
+$margin-lg: 8rem;
+$margin-md: 6rem;
+$margin-sm: 4rem;
+$margin-ssm: 2rem;
+$margin-xs: 1rem;
+
+$padding-xl: 10rem;
+$padding-lg: 8rem;
+$padding-md: 6rem;
+$padding-sm: 4rem;
+$padding-ssm: 2rem;
+$padding-xs: 1rem;
+
+
+//BREAKPOINTS MEDIA QUERIES
+$bpg1:93.75em;//1500px
+$bpg2:109.375em;//1750px
+$bp1: 77.5em; //1240px
+$bp2: 62.5em; //1000px
+$bp3: 53.75em; //860px
+$bp4: 50em; //800
+$bp5: 44.375em; //710px
+$bp6: 37.5em; //600px
+$bp7: 28.125em; //450px;
+$bp8: 18.75em;  // 350px

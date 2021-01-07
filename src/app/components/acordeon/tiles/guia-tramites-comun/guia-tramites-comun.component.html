@@ -1,0 +1,13 @@
+<!-- GUIA DE TRAMITES -->
+<div class="acordeon__contenido" *ngIf="miAcordeon">
+    <div class="acordeon__contenedor-acordeon" id="guiaDeTramites">
+        <button class="acordeon__boton-acordeon" data-toggle="collapse" data-target="#acordeonGuiaTramite" aria-expanded="false" aria-controls="acordeonGuiaTramite">
+          Guías de Trámites y Formularios
+      </button>
+    </div>
+    <div id="acordeonGuiaTramite" class="collapse" aria-labelledby="guiaDeTramites" data-parent="#acordeon">
+        <div class="acordeon__acordeon-interno acordeon__acordeon-interno--texto-izquierda">
+            <app-tabla-guia-formulario [registros]="miAcordeon.registros"></app-tabla-guia-formulario>
+        </div>
+    </div>
+</div>

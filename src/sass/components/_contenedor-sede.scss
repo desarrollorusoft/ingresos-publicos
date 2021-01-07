@@ -1,0 +1,16 @@
+.contenedor-sede {
+    &__contenido {
+        font-size: $font-size-sm;
+        display: flex;
+        align-items: center;
+    }
+    &__icono {
+        width: 1.4rem;
+        margin-right: 1.5rem;
+        color: $color-grey-dark-2;
+    }
+    &__link:link,
+    &__link:visited {
+        color: $color-secondary;
+    }
+}

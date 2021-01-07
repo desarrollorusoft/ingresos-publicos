@@ -1,0 +1,87 @@
+<header class="header">
+    <div class="encabezado">
+        <div class="encabezado__titulo">SECRETAR&Iacute;A DE INGRESOS P&Uacute;BLICOS</div>
+        <a href="http://www.vicentelopez.gov.ar/" target="_blank">
+            <img src="https://www.vicentelopez.gov.ar/static-iipp/p/imgs/new_logo-header.jpg" alt="Logo MVL" class="encabezado__img">
+        </a>
+    </div>
+    <nav id="navbar" class="navbar sticky-top">
+        <div class="navbar__menu" *ngIf="!isDesktop">
+            <div class="navbar__checkbox-mobile">
+                <input type="checkbox" name="ceck" [(ngModel)]="checked" class="navbar__checkbox" id="checkbox-navbar">
+                <label for="checkbox-navbar" class="navbar__label-checkbox">
+                    <i class="fas fa-bars"></i>
+                </label>
+            </div>
+            <div class="navbar__lista-mobile" *ngIf="checked">
+                <ul class="navbar__lista-mobile--lista">
+                    <li class="navbar__lista-mobile--item" [routerLink]="['/inicio']">Inicio</li>
+                    <li class="navbar__lista-mobile--item" [routerLink]="['/typ']">Tr&aacute;mites Y Pagos</li>
+                    <li class="navbar__lista-mobile--item" [routerLink]="['/ddjj']">Declaraciones Juradas</li>
+                    <li class="navbar__lista-mobile--item" [routerLink]="['/ot']">Otros Tr&aacute;mites</li>
+                    <li class="navbar__lista-mobile--item" [routerLink]="['/idu']">Informaci&oacute;n y Datos &Uacute;tiles</li>
+                    <li class="navbar__lista-mobile--item" [routerLink]="['/novedades','lista']">Novedades</li>
+                    <li class="navbar__lista-mobile--item"><a href="https://www.vicentelopez.gov.ar/SAT/pages/externos/formulario_consultas.xhtml" [target]="'_blank'">Contactanos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="navbar__menu" *ngIf="isDesktop">
+
+            <div class="navbar__item" [routerLink]="['/inicio']">Inicio</div>
+            <div class="navbar__item navbar__item--con-lista color-primary-darkest">
+                <span [routerLink]="['/typ']">Trámites y Pagos</span>
+                <ul class="navbar__lista navbar__lista--1">
+                    <li class="navbar__item-lista">
+                        <span class="navbar__item-lista--titulo">Trámites y Pagos</span>
+                        <ul class="navbar__item-lista navbar__item-lista--lista">
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','abl']">Alumbrado, Limpieza,<br>Conservación de la Vía Pública<br>y Servicios Varios</a></li>
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','automotor']">Automotores</a></li>
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','motovehiculos']">Motovehículos</a></li>
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','embarcaciones']">Embarcaciones</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar__item-lista">
+                        <span class="navbar__item-lista--titulo">Declaraciones Juradas</span>
+                        <ul class="navbar__item-lista navbar__item-lista--lista">
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','regimenSimplificado']">Régimen Simplificado</a></li>
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','inspeccionSegHig']">Inspección por Seguridad<br>e Higiene</a></li>
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','publicidad']">Publicidad y Propaganda</a></li>
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','oep']">Ocupación o Uso de<br>Espacios Públicos</a></li>
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','antenas']">Antenas</a></li>
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','mantenimientoVial']">Mantenimiento Vial<br>Municipal</a></li>
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','ingresosBrutos']">Ingresos Brutos</a></li>
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','serviciosVarios']">Servicios Varios (Motores)</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar__item-lista">
+                        <span class="navbar__item-lista--titulo">Otros Trámites</span>
+                        <ul class="navbar__item-lista navbar__item-lista--lista">
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','catastro']">Catastro</a></li>
+                            <li class="navbar__item-lista"><a href="https://www.vicentelopez.gov.ar/cobros_fiscalizacion/" [target]="'_blank'">Estación Sanitaria</a></li>
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','derechosCementerio']">Derechos de Cementerio</a></li>
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','piletas']">Revisación Médica<br>para Pileta</a></li>
+                            <li class="navbar__item-lista"><a rel="blurear" [routerLink]="['/tramite','coworking']">Coworking</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar__item navbar__item--con-lista navbar__lista--2">
+                <span [routerLink]="['/idu']">Información y Datos &Uacute;tiles </span>
+                <ul class="navbar__lista">
+                    <li class="navbar__item-lista navbar__item-lista--mitad"><a rel="blurear" [routerLink]="['/info','datosUtiles']">Información y Datos &Uacute;tiles</a></li>
+                    <li class="navbar__item-lista navbar__item-lista--mitad"><a rel="blurear" [routerLink]="['/info','preguntasFrecuentes']">Preguntas Frecuentes</a></li>
+                    <li class="navbar__item-lista navbar__item-lista--mitad"><a rel="blurear" [routerLink]="['/info','calendarioTributario']">Calendario Tributario</a></li>
+                    <li class="navbar__item-lista navbar__item-lista--mitad"><a rel="blurear" [routerLink]="['/info','normativaTributaria']">Normativa Tributaria</a></li>
+                    <li class="navbar__item-lista navbar__item-lista--mitad" [routerLink]="['/info','gobiernoAbierto']"><a rel="blurear">Gobierno Abierto</a></li>
+                    <li class="navbar__item-lista navbar__item-lista--mitad"><a rel="blurear" [routerLink]="['/info','culturaFiscal']">Cultura Fiscal</a></li>
+                </ul>
+            </div>
+            <div class="navbar__item" [routerLink]="['/novedades','lista']">Novedades</div>
+            <div class="navbar__item" [routerLink]="['/turnos']">Turnos</div>
+            <div class="navbar__item"><a href="https://www.vicentelopez.gov.ar/SAT/pages/externos/formulario_consultas.xhtml" target="_blank">Contactanos</a></div>
+            <!-- <div class="navbar__item">Buscar</div> -->
+        </div>
+        <!-- NAV PATH -->
+        <app-nav-path></app-nav-path>
+    </nav>
+</header>

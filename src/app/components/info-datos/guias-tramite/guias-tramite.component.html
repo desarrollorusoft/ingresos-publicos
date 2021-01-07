@@ -1,0 +1,19 @@
+<div id="acordeon">
+  <div class="acordeon__contenido"
+        *ngFor="let guia of guiasTramite; let i = index">
+
+    <div class="acordeon__contenedor-acordeon" [id]="'guia-'+i">
+        <button class="acordeon__boton-acordeon collapsed u-text-bold acordeon__texto-boton--grande"
+                data-toggle="collapse"
+                [attr.data-target]="'#guiaCollapse-'+i"
+                aria-expanded="false"
+                [attr.aria-controls]="'guiaCollapse-'+i"
+                [innerHTML]="guia.titulo"></button>
+    </div>
+    <div [id]="'guiaCollapse-'+i" class="collapse" [attr.aria-labelledby]="'guia-'+i" data-parent="#acordeon">
+        <div class="acordeon__acordeon-interno acordeon__acordeon-interno--texto-izquierda">
+          <app-tabla-guia-formulario [registros]="guia.lista"></app-tabla-guia-formulario>
+        </div>
+    </div>
+  </div>
+</div>

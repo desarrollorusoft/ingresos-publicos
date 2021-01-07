@@ -1,0 +1,15 @@
+<div id="acordeon">
+    <div class="acordeon__contenido texto-bold-grande" *ngFor="let calendario of calendarios; let i = index">
+        <app-calendario-abl [id]=i [registros]="calendario.lista" [titulo]="calendario.titulo" [bajada]="calendario.bajada"></app-calendario-abl>
+        <app-calendario-cementerio [id]=i [registros]="calendario.lista" [titulo]="calendario.titulo" [bajada]="calendario.bajada"></app-calendario-cementerio>
+        <app-calendario-comun [id]=i [registros]="calendario.lista" [titulo]="calendario.titulo" [bajada]="calendario.bajada"></app-calendario-comun>
+        <app-calendario-mv [id]=i [registros]="calendario.lista" [titulo]="calendario.titulo" [bajada]="calendario.bajada"></app-calendario-mv>
+        <app-calendario-rs-ish [id]=i [registros]="calendario.lista" [titulo]="calendario.titulo" [bajada]="calendario.bajada"></app-calendario-rs-ish>
+        <app-calendario-trimestral [id]=i [registros]="calendario.lista" [titulo]="calendario.titulo" [bajada]="calendario.bajada"></app-calendario-trimestral>
+        <app-calendario-trimestral-oep-antenas [id]=i [registros]="calendario.lista" [titulo]="calendario.titulo" [bajada]="calendario.bajada"></app-calendario-trimestral-oep-antenas>
+        <app-calendario-trimestral-vencimiento [id]=i [registros]="calendario.lista" [titulo]="calendario.titulo" [bajada]="calendario.bajada"></app-calendario-trimestral-vencimiento>
+        <app-calendario-cuatrimestral-vencimiento [id]=i [registros]="calendario.lista" [titulo]="calendario.titulo" [bajada]="calendario.bajada"></app-calendario-cuatrimestral-vencimiento>
+
+        <app-calendario-servicios [id]=i [acordeon]="calendario" titulo="Tributos y Derechos por Servicios Varios" [bajada]="bajadaSV"></app-calendario-servicios>
+    </div>
+</div>

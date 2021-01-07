@@ -1,0 +1,22 @@
+button.btn {
+    padding: 1.5rem 4rem;
+    font-size: $default-font-size;
+    border-radius: 1000px;
+
+    &:focus{
+      outline:none;
+      box-shadow: none;
+    }
+
+    &--outline-secondary {
+        background-color: transparent;
+        border: 1px solid $color-secondary;
+        color: $color-secondary;
+        transition: all .4s;
+
+        &:hover {
+            background-color: $color-secondary;
+            color: $color-white;
+        }
+    }
+}

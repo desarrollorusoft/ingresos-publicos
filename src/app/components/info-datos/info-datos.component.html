@@ -1,0 +1,57 @@
+<div *ngIf="data.carousel" class="inicio__carousel">
+  <div id="carouselInicio" class="carousel slide" data-interval="6000" data-ride="carousel">
+    <ol class="carousel-indicators inicio__carousel--indicators">
+      <li data-target="#carouselInicio" [attr.data-slide-to]="i" class="inicio__carousel--item"
+          [ngClass]="{'active': item===data.carousel[0]}"
+          *ngFor="let item of data.carousel; let i = index"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item" [ngClass]="{'active': item===data.carousel[0]}"
+           *ngFor="let item of data.carousel">
+        <a [href]="item.redireccion" [target]="'_blank'">
+          <img class="d-block w-100 img-fluid" [src]="item.url | domSeguro" alt="Banner">
+        </a>
+      </div>
+    </div>
+    <a class="carousel-control-prev inicio__carousel--control" href="#carouselInicio" role="button" data-slide="prev">
+      <span class="flecha-izquierda" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next inicio__carousel--control" href="#carouselInicio" role="button" data-slide="next">
+      <span class="flecha-derecha" aria-hidden="true"></span>
+    </a>
+  </div>
+</div>
+
+<div class="tramites-pagos">
+    <div class="info-datos__descripcion" [ngClass]="!data.icono?'info-datos__descripcion--mas-chico':''">
+        <div *ngIf="data && data.icono" class="tramites-pagos__icono">
+            <div class="tramites-pagos__titulo" [ngClass]="data.clave == 'coherenciaFiscal'?'u-margin-bottom-sm':'u-margin-bottom-md'" *ngIf="data && data.clave == 'coherenciaFiscal'">
+                Prop&oacute;sito y Objetivos
+            </div>
+            <div class="contenedor-iconos__icono">
+                <img [src]="data.icono" [alt]="data.titulo" class="contenedor-iconos__img" [ngClass]="{'grande':(data.clave == 'coherenciaFiscal')}" *ngIf="data.icono">
+            </div>
+        </div>
+        <div class="tramites-pagos__titulo" [innerHTML]="obtenerTitulo()" *ngIf="data && data.clave != 'coherenciaFiscal'"></div>
+    </div>
+
+    <div class="contenedor-contenidos">
+        <app-botones-info *ngIf="!data"></app-botones-info>
+        <app-datos-utiles *ngIf="data && data.clave == 'datosUtiles'"></app-datos-utiles>
+        <app-informacion-util *ngIf="data && data.clave == 'informacionUtil'"></app-informacion-util>
+        <app-guias-tramite *ngIf="data && data.clave == 'guiasTramite'"></app-guias-tramite>
+        <app-preguntas-frecuentes *ngIf="data && data.clave == 'preguntasFrecuentes'"></app-preguntas-frecuentes>
+        <app-calendario-tributario *ngIf="data && data.clave == 'calendarioTributario'"></app-calendario-tributario>
+        <app-normativa-tributaria *ngIf="data && data.clave == 'normativaTributaria'"></app-normativa-tributaria>
+        <app-cultura-fiscal *ngIf="data && data.clave == 'culturaFiscal'"></app-cultura-fiscal>
+        <app-cuentos-abuelos *ngIf="data && data.clave == 'cuentosAbuelos'"></app-cuentos-abuelos>
+        <app-coherencia-fiscal *ngIf="data && data.clave == 'coherenciaFiscal'"></app-coherencia-fiscal>
+        <app-gobierno-abierto *ngIf="data && data.clave == 'gobiernoAbierto'"></app-gobierno-abierto>
+        <app-nosotros *ngIf="data && data.clave == 'nosotros'"></app-nosotros>
+        <app-transparencia-activa *ngIf="data && data.clave == 'transparenciaActiva'"></app-transparencia-activa>
+
+        <app-vision *ngIf="data && data.clave == 'vision'"></app-vision>
+        <app-equipo *ngIf="data && data.clave == 'equipo'"></app-equipo>
+    </div>
+
+</div>

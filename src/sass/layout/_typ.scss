@@ -1,0 +1,31 @@
+.typ{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2.5rem;
+
+    @include respond( bp3 ){
+      padding-top: 2.5rem;
+    }
+
+    @include respond( bp4 ){
+      padding-top: 1rem;
+    }
+
+    @include respond( bp4 ){
+      padding-top: 0rem;
+    }
+
+    &__carousel{
+      padding: 0 10rem;
+      margin-bottom: 5rem;
+
+      @include respond( bp3 ){
+        padding: 0;
+      }
+
+    }
+
+
+  }

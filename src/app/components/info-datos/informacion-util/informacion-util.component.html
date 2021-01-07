@@ -1,0 +1,71 @@
+<div id="acordeon">
+    <!-- DIAS Y HORARIOS -->
+    <div id="palacioMunicipal" class="acordeon__contenido">
+        <div class="acordeon__contenedor-acordeon" id="horariosAtencion">
+            <button id="btn-pm" class="acordeon__boton-acordeon collapsed" data-toggle="collapse" data-target="#horariosAtencionCollapse" aria-expanded="false" aria-controls="horariosAtencionCollapse">
+          Días y Horarios de Atención
+        </button>
+        </div>
+        <div id="horariosAtencionCollapse" class="collapse u-margin-top-sm" aria-labelledby="horariosAtencion" data-parent="#acordeon">
+            <div class="contedor_fechas_atencion">
+                <div class="contendor-sede" *ngFor="let dato of datosAtencion">
+                    <h4><b [innerHTML]="dato.titulo"></b></h4>
+                    <p class="contenedor-sede__contenido" *ngIf="dato.ubicacion">
+                        <img src="assets/png/Iconos-location.png" alt="" class="contenedor-sede__icono"><span [innerHTML]="dato.ubicacion"></span></p>
+                    <p class="contenedor-sede__contenido" *ngIf="dato.fechas"><img src="assets/png/Iconos-reloj.png" alt="" class="contenedor-sede__icono"> {{ dato.fechas }}</p>
+                    <p class="contenedor-sede__contenido" *ngIf="dato.telefono"><img src="assets/png/Iconos-phone.png" alt="" class="contenedor-sede__icono"> {{ dato.telefono }}</p>
+                    <p class="contenedor-sede__contenido" *ngIf="dato.url">
+                        <a class="contendor-sede__link" [href]="dato.url" target="_blank" [innerHTML]="dato.nombreUrl"></a>
+                    </p>
+                    <p class="contenedor-sede__contenido" *ngIf="dato.respuestas" [innerHTML]="dato.respuestas"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DELEGACIONES MUNICIPALES -->
+    <div id="delegacionesMunicipales" class="acordeon__contenido">
+        <div class="acordeon__contenedor-acordeon" id="delegacionesMunicipales">
+            <button id="btn-dm" class="acordeon__boton-acordeon collapsed" data-toggle="collapse" data-target="#delegacionesMunicipalesCollapse" aria-expanded="false" aria-controls="delegacionesMunicipalesCollapse">
+          Delegaciones Municipales
+        </button>
+        </div>
+        <div id="delegacionesMunicipalesCollapse" class="collapse u-margin-top-sm" aria-labelledby="delegacionesMunicipales" data-parent="#acordeon">
+            <app-delegaciones></app-delegaciones>
+            <iframe class="contenedor-delegaciones__mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3287.6824658796004!2d-58.49239918477274!3d-34.510933530378985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb0c91fc0a959%3A0x8829e91b2fc8595b!2sMunicipalidad+de+Vicente+L%C3%B3pez!5e0!3m2!1ses-419!2sar!4v1506369121361"></iframe>
+        </div>
+    </div>
+
+    <!-- LINK DE INTERES -->
+    <div class="acordeon__contenido">
+        <div class="acordeon__contenedor-acordeon" id="linksInteres">
+            <button class="acordeon__boton-acordeon collapsed" data-toggle="collapse" data-target="#linksInteresCollapse" aria-expanded="false" aria-controls="linksInteresCollapse">
+          Links de Inter&eacute;s
+        </button>
+        </div>
+        <div id="linksInteresCollapse" class="collapse u-margin-top-sm" aria-labelledby="linksInteres" data-parent="#acordeon">
+            <div class="contenedor-links">
+                <div class="contenedor-links__contenido" *ngFor="let link of links">
+                    <h4><b [innerHTML]="link.titulo"></b></h4>
+                    <p class="contenedor-links__texto" *ngIf="link.descripcion"><b class="contenedor-link__titulo-link" [innerHTML]="link.descripcion"></b></p>
+                    <p class="contenedor-links__texto" *ngIf="link.url">
+                        <a class="contenedor-links__link" [href]="link.url" target="_blank" [innerHTML]="link.nombreUrl"></a>
+                    </p>
+                    <br *ngIf="link.descripcion">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MEDIOS DE PAGO -->
+    <div class="acordeon__contenido">
+        <div class="acordeon__contenedor-acordeon" id="mediosPago">
+            <button class="acordeon__boton-acordeon collapsed" data-toggle="collapse" data-target="#mediosPagoCollapse" aria-expanded="false" aria-controls="mediosPagoCollapse">
+          Medios de Pago
+        </button>
+        </div>
+        <div id="mediosPagoCollapse" class="collapse u-margin-top-sm" aria-labelledby="mediosPago" data-parent="#acordeon">
+            <app-medios-pago></app-medios-pago>
+        </div>
+    </div>
+</div>

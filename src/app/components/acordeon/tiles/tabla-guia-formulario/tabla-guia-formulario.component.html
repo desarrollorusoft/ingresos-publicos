@@ -1,0 +1,33 @@
+<table class="acordeon__tabla-typ">
+    <tbody>
+        <tr *ngFor="let registro of registros">
+            <td class="u-text-600" width="44%" [innerHTML]="registro.nombre"></td>
+            <td width="18%">
+                <span *ngIf="registro.urlGuiaTramite.length == 0" class="u-text-600 acordeon__sin-archivo">Guía de Trámite</span>
+                <span *ngFor="let enlace of registro.urlGuiaTramite">
+          <a  href="{{enlace}}" target="_blank" class="acordeon__link">Gu&iacute;a de Tr&aacute;mite</a>
+        </span>
+            </td>
+            <td width="18%" class="u-text-600 acordeon__sin-archivo">
+                <a [routerLink]="['/info','preguntasFrecuentes']" target="_blank" class="acordeon__link">Preguntas Frecuentes</a>
+            </td>
+            <td class="u-text-600" width="15%">
+                <span *ngIf="registro.urlFormulario.length == 0" class="u-text-600 acordeon__form acordeon__sin-archivo">Formulario</span>
+                <span *ngFor="let enlace of registro.urlFormulario; let i = index">
+          <br *ngIf="i > 0">
+          <a href="{{enlace}}" target="_blank" class="acordeon__link acordeon__form">Formulario</a>
+        </span>
+            </td>
+            <td class="acordeon__info" width="5%">
+                <div [ngClass]="registro.consultaOnline ?'acordeon__info--icono':'acordeon__info--no-form'">
+                    <svg class="acordeon__info--svg">
+            <use xlink:href="assets/svg/sprite.svg#icon-info"></use>
+          </svg>
+                    <div class="acordeon__info--texto">
+                        Realiz&aacute; tu tr&aacute;mite online adjuntando tu Formulario completo en "<b>Contactanos</b>"
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

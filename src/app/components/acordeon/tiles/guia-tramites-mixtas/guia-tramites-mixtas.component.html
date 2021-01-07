@@ -1,0 +1,20 @@
+<!-- GUIA DE TRAMITES MIXTA -->
+<div class="acordeon__contenido" *ngIf="miAcordeon">
+    <div class="acordeon__contenedor-acordeon" id="guiaDeTramites">
+        <button class="acordeon__boton-acordeon" data-toggle="collapse" data-target="#acordeonGuiaTramite" aria-expanded="false" aria-controls="acordeonGuiaTramite">
+          Guías de Trámites y Formularios
+      </button>
+    </div>
+    <div id="acordeonGuiaTramite" class="collapse" aria-labelledby="guiaDeTramites" data-parent="#acordeon">
+        <div class="acordeon__acordeon-interno acordeon__acordeon-interno--texto-izquierda">
+            <div class="acordeon__contenido-html" [innerHTML]="miAcordeon.texto"></div>
+            <div class="u-margin-bottom-md u-margin-top-md">
+                <app-tabla-guia-formulario [registros]="miAcordeon.registros" [noMuestroInfo]="true"></app-tabla-guia-formulario>
+            </div>
+
+            <div class="acordeon__notas u-margin-bottom-sm" *ngFor="let nota of miAcordeon.notas">
+                <a href="{{ nota.url }}" target="_blank" class="acordeon__link-mixta" [innerHTML]="nota.nombre"></a>
+            </div>
+        </div>
+    </div>
+</div>

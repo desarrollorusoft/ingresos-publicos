@@ -1,0 +1,6 @@
+<app-header *ngIf="noEsIframe()"></app-header>
+<main class="main">
+    <router-outlet></router-outlet>
+    <span class="fixed fas fa-angle-up" (click)="subir()" *ngIf="estaArriba()&&noEsIframe()"></span>
+</main>
+<app-footer *ngIf="noEsIframe()"></app-footer>

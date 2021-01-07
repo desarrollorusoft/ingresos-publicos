@@ -1,0 +1,88 @@
+<div id="acordeon">
+    <!-- ORGANIGRAMA -->
+    <div class="acordeon__contenido">
+        <div class="acordeon__contenedor-acordeon" id="organigrama">
+            <button class="acordeon__boton-acordeon" data-toggle="collapse" data-target="#organigramaCollapse" aria-controls="organigrama" aria-expanded="false">
+          Organigrama
+        </button>
+        </div>
+        <div id="organigramaCollapse" class="collapse" aria-labelledby="organigrama" data-parent="#acordeon">
+            <div class="acordeon__acordeon-interno equipo__contenedor--1">
+                <div class="equipo__contenedor-organigrama">
+                    <img class="equipo__organigrama" [src]="equipo.organigrama.diagrama" *ngIf="isDesktop">
+                    <a href="https://www.vicentelopez.gov.ar/static-iipp/p/IIPP/equipo/organigrama.png" [target]="'_blank'" *ngIf="!isDesktop" download>
+                        <b>Descargar Organigrama Ingresos P&uacute;blicos</b>
+                    </a>
+                </div>
+
+                <div class="equipos__carousel u-margin-top-md">
+                    <div id="carouselEquipos" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item" [ngClass]="{'active': item===equipo.organigrama.equipos[0]}" *ngFor="let item of equipo.organigrama.equipos">
+                                <img class="d-block w-100" [src]="item.img" alt="Banner">
+                                <div class="equipo__carousel--pie" [innerHTML]="item.nombre"></div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselEquipos" role="button" data-slide="prev">
+                            <span class="flecha-izquierda" aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselEquipos" role="button" data-slide="next">
+                            <span class="flecha-derecha" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICADORES -->
+    <div class="acordeon__contenido">
+        <div class="acordeon__contenedor-acordeon" id="notificadores">
+            <button class="acordeon__boton-acordeon" data-toggle="collapse" data-target="#notificadoresCollapse" aria-controls="notificadores" aria-expanded="false">
+          Equipo de Notificadores
+        </button>
+        </div>
+        <div id="notificadoresCollapse" class="collapse" aria-labelledby="notificadores" data-parent="#acordeon">
+            <div class="acordeon__acordeon-interno acordeon__acordeon-interno--texto-izquierda">
+                <div class="equipo__contenedor">
+
+                    <div class="equipo__item" *ngFor="let empleado of equipo.notificadores">
+                        <figure class="equipo__img">
+                            <img [src]="empleado.img" [ngStyle]="{'position':'relative','bottom':empleado.yoffset,'right':empleado.xoffset}">
+                        </figure>
+                        <h6 class="equipo__titulo" [innerHTML]="empleado.nombre"></h6>
+                        <p class="equipo__texto" [innerHTML]="empleado.rol"></p>
+                        <p class="equipo__texto" [innerHTML]="empleado.area"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- INSPECTORES -->
+    <div class="acordeon__contenido">
+        <div class="acordeon__contenedor-acordeon" id="inspectores">
+            <button class="acordeon__boton-acordeon" data-toggle="collapse" data-target="#inspectoresCollapse" aria-controls="inspectores" aria-expanded="false">
+          Equipo de Inspectores - Fiscalización Tributaria
+        </button>
+        </div>
+        <div id="inspectoresCollapse" class="collapse" aria-labelledby="inspectores" data-parent="#acordeon">
+            <div class="acordeon__acordeon-interno acordeon__acordeon-interno--texto-izquierda">
+                <div class="equipo__contenedor">
+                    <div class="equipo__item" *ngFor="let empleado of equipo.inspectores">
+                        <figure class="equipo__img">
+                            <img [src]="empleado.img" [ngStyle]="{'position':'relative','bottom':empleado.yoffset,'right':empleado.xoffset}">
+                        </figure>
+
+                        <h6 class="equipo__titulo" [innerHTML]="empleado.nombre"></h6>
+                        <p class="equipo__texto" [innerHTML]="empleado.rol"></p>
+                        <p class="equipo__texto" [innerHTML]="empleado.area"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,245 @@
+.acordeon {
+    &__titulo-arba {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+    &__acordeon-interno {
+        border: none;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+        &--texto-izquierda {
+            text-align: left;
+        }
+    }
+    &__acordeon-enlace {
+        float: left;
+        font-size: 1.6rem;
+        padding-bottom: 2.2rem;
+    }
+    &__contenedor-acordeon {
+        padding: 0;
+    }
+    &__boton-acordeon {
+        padding: 1.5rem 0;
+        width: 100%;
+        border: none;
+        border-radius: 3px;
+        border: 1px solid $color-secondary;
+        color: $color-secondary;
+        background-color: $color-white;
+        font-size: 2rem;
+        transition: all .4s;
+        font-weight: bold;
+        &[aria-expanded="true"],
+        &:hover {
+            background-color: $color-secondary;
+            color: $color-white;
+            font-weight: bold;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    &__sin-archivo {
+        color: $color-grey-mvl
+    }
+    &__tabla-typ {
+        width: 100%;
+        font-size: $font-size-sm;
+        @include respond( bp3) {
+            text-align: center;
+        }
+        & td {
+            color: #414042;
+        }
+        & tr {
+            height: 4rem;
+        }
+        & tr:not(:last-child) {
+            border-bottom: 2px solid $color-grey-light-3;
+        }
+        & thead {
+            background-color: $color-primary-lightest;
+            border-bottom: 1px solid $color-grey-dark-3;
+        }
+        @include respond(bp6) {
+            font-size: 1.2rem;
+            & .acordeon__form {
+                margin-right: 2rem;
+            }
+        }
+    }
+    &__info {
+        border-bottom: 2px solid $color-white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        height: 4rem;
+        position: relative;
+        &--texto {
+            position: absolute;
+            background-color: $color-secondary;
+            padding: 1.4rem;
+            width: 16rem;
+            border-radius: .5rem;
+            color: $color-white;
+            font-size: 1.2rem;
+            right: -18rem;
+            top: -7rem;
+            opacity: 0;
+        }
+        &--icono:hover>&--texto {
+            opacity: 1;
+        }
+        &--icono {
+            background-color: $color-secondary;
+        }
+        &--no-form {
+            background-color: $color-grey-light-4;
+        }
+        &--icono,
+        &--no-form {
+            border-radius: 50%;
+            height: 2.5rem;
+            width: 2.5rem;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .4s;
+            & svg {
+                height: 2rem;
+                width: 2rem;
+                fill: $color-white;
+            }
+        }
+    }
+    &__info-texto {
+        opacity: 0;
+        position: absolute;
+        width: 20rem;
+        font-size: 1.2rem;
+        right: -23rem;
+        top: -5rem;
+        background-color: $color-primary-lightest;
+        padding: .5rem;
+        border-radius: 3px;
+        box-shadow: 0 .5rem 1.5rem rgba($color-grey-dark-3, .6);
+        z-index: 2;
+    }
+    &__link:link,
+    &__link:active,
+    &__link:visited {
+        color: $color-link;
+        font-weight: 600;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+        &:hover {
+            text-decoration: none;
+            color: $color-fourth;
+        }
+    }
+    &__link-mixta {
+        font-size: 1.6rem;
+    }
+    &__notas {
+        margin-bottom: 1rem;
+    }
+    &__contenido:not(:last-child) {
+        margin-bottom: 2rem;
+        border: none;
+    }
+    &__titulo-normativa {
+        text-transform: uppercase;
+        font-size: $default-font-size;
+        color: $color-grey-dark-1;
+        padding: 1rem 0;
+        text-align: left;
+        font-weight: bold;
+        line-height: 1.8;
+    }
+    &__normativa a {
+        font-size: $font-size-sm;
+        display: block;
+        line-height: 1.8;
+        color: $color-link;
+        &:hover {
+            color: $color-primary-darkest;
+        }
+    }
+    &__instructivo {
+        font-size: 1.4rem;
+        color: $color-link;
+        transition: all .2s;
+        &:hover {
+            color: $color-primary-darkest;
+            cursor: pointer;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+    }
+    &__texto-boton {
+        &--grande {
+            font-size: $font-size-lg;
+        }
+    }
+    &__contenido-html {
+        b>span,
+        li>b {
+            font-weight: 700 !important;
+        }
+        & p,
+        & ol {
+            font-size: 1.6rem;
+            line-height: 1.5;
+            & b {
+                font-weight: 400;
+            }
+        }
+        & ol,
+        & ul {
+            list-style-type: none;
+        }
+        & ol {
+            & span {
+                padding-right: 2rem;
+            }
+            & li b b b {
+                font-weight: bold;
+            }
+        }
+        & ul {
+            padding-left: 4rem;
+            & li {
+                padding-bottom: .5rem;
+                &:first-child {
+                    padding-top: .5rem;
+                }
+            }
+        }
+    }
+    &__funciones {
+        font-size: 1.4rem;
+        line-height: 1.4;
+        h5 {
+            font-size: 1.6rem;
+            margin-top: 2rem;
+        }
+        h4 {
+            font-size: 1.8rem;
+            color: $color-primary-dark;
+            margin-bottom: 3rem;
+        }
+        ul {
+            padding-left: 2rem;
+        }
+    }
+    &__bajada-calendario {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+}

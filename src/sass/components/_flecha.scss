@@ -1,0 +1,53 @@
+.flecha{
+
+  &--chica{
+    transform: scale(0.5);
+  }
+
+  &-derecha,&-izquierda{
+    position:relative;
+    width: 3rem;
+
+    &::before,&::after{
+      content:'';
+      display:inline-block;
+      position:absolute;
+      background-color: $color-secondary;
+      height:3px;
+      width:100%;
+    }
+  }
+
+  &-derecha{
+
+    &::before{
+      transform:rotate(45deg);
+      transform-origin: top right;
+    }
+
+    &::after{
+      transform:rotate(-45deg);
+      transform-origin: top right;
+    }
+
+  }
+
+  &-izquierda{
+
+    &::before{
+      transform:rotate(45deg);
+      transform-origin: top left;
+    }
+
+    &::after{
+      transform:rotate(-45deg);
+      transform-origin: top left;
+    }
+
+  }
+
+  &--absolute{
+    position:absolute;
+  }
+
+}

@@ -1,0 +1,15 @@
+<!-- INSTRUCTIVO -->
+<div class="acordeon__contenido" *ngIf="miAcordeon">
+    <div class="acordeon__contenedor-acordeon" id="headingInstructivo">
+        <button class="acordeon__boton-acordeon collapsed" data-toggle="collapse" data-target="#acordeonInstructivos" aria-expanded="false" aria-controls="acordeonInstructivos">
+        Instructivos
+      </button>
+    </div>
+    <div id="acordeonInstructivos" class="collapse" aria-labelledby="headingInstructivo" data-parent="#acordeon">
+        <div class="acordeon__acordeon-interno acordeon__acordeon-interno--texto-izquierda ">
+            <div class="acordeon__contenedor-instructivo u-margin-bottom-sm" *ngFor="let instructivo of miAcordeon.registros">
+                <a href="{{instructivo.url}}" target="_blank" class="acordeon__instructivo" [innerHTML]="instructivo.nombre"></a>
+            </div>
+        </div>
+    </div>
+</div>

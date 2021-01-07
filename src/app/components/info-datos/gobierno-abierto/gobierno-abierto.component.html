@@ -1,0 +1,37 @@
+<div class="contenedor-gobierno">
+  <p class="contenedor-gobierno__texto">Es una pol&iacute;tica p&uacute;blica que implica la apertura hacia<br>la ciudadan&iacute;a, poniendo a disposici&oacute;n informaci&oacute;n y adoptando<br>procesos innovadores de participaci&oacute;n.</p>
+
+  <a href="/ingresos-publicos/novedades/detalle/N-20170731" target="_blank" class="contenedor-gobierno__enlace">Taller de &ldquo;Gobierno Abierto&rdquo; con Poder Ciudadano</a>
+  <a href="http://poderciudadano.org/" target="_blank" class=""><img class="contenedor-gobierno__img" src="assets/png/Iconos-poderCiudadano.png"></a>
+</div>
+
+  <button class="acordeon__boton-acordeon" [routerLink]="['/info','nosotros']">
+    <span class="u-text-bold acordeon__texto-boton--grande">Nosotros</span>
+  </button>
+  <button class="acordeon__boton-acordeon u-margin-top-xs" [routerLink]="['/info','transparenciaActiva']">
+    <span class="u-text-bold acordeon__texto-boton--grande">Transparencia Activa</span>
+  </button>
+<div id="acordeon">
+  <div class="acordeon__contenido">
+
+    <div class="acordeon__contenedor-acordeon u-margin-top-xs" id="linkInteres"  *ngIf="false">
+        <button class="acordeon__boton-acordeon collapsed"
+                data-toggle="collapse"
+                data-target="#linkInteresCollapse"
+                aria-expanded="false"
+                aria-controls="linkInteresCollapse">
+                <span class="u-text-bold acordeon__texto-boton--grande">Links de Inter&eacute;s</span>
+        </button>
+    </div>
+    <!--
+    <div id="linkInteresCollapse" class="collapse" aria-labelledby="#linkInteres" data-parent="#acordeon">
+      <div class="contenedor-links">
+        <a href ="http://www.boletinoficial.gob.ar/#!DetalleNorma/151503/20160929" target="_blank">Derecho de Acceso a la Informaci&oacute;n P&uacute;blica Ley 27275</a>
+        <a href="http://blogs.unlp.edu.ar/gobiernoabierto/reglamentacion" target="_blank">Reglamentaci&oacute;n Ley Nacional de Acceso a la Informaci&oacute;n P&uacute;blica (27.275)</a>
+      </div>
+    </div>
+    -->
+  </div>
+</div>
+
+

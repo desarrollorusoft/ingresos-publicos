@@ -1,0 +1,44 @@
+.consulta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include respond( bp5) {
+        height: 20rem;
+        overflow: hidden;
+    }
+    &__imagen {
+        width: 98.8vw;
+        @include respond( bp5) {
+            height: 100%;
+            transform: scale( 1.3) translateY(-1rem);
+            object-fit: cover;
+        }
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        flex: 1;
+    }
+    &__icono {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__svg {
+        border-radius: 50%;
+        background: $color-white;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &--icono {
+            height: 4rem;
+            width: 4rem;
+            fill: $color-primary;
+        }
+    }
+}

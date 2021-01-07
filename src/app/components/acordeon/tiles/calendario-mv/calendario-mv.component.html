@@ -1,0 +1,29 @@
+<!-- CALENDARIO TRIBUTARIO MANTENIMIENTO -->
+<div class="acordeon__contenido" *ngIf="misRegistros">
+    <div class="acordeon__contenedor-acordeon" id="mantenimientoCalendarioTributario">
+        <button class="acordeon__boton-acordeon collapsed" data-toggle="collapse" [attr.data-target]="'#'+identificador()" aria-expanded="false" [attr.aria-controls]="identificador()" [innerHTML]="encabezado"></button>
+    </div>
+    <div [id]="identificador()" class="collapse" aria-labelledby="mantenimientoCalendarioTributario" data-parent="#acordeon">
+        <div class="acordeon__acordeon-interno ">
+            <div class="acordeon__bajada-calendario u-margin-bottom-sm" *ngIf="bajada">
+                <b [innerHTML]="bajada"></b>
+            </div>
+            <table class="acordeon__tabla-typ">
+                <thead>
+                    <tr>
+                        <th class="u-text-bold u-text-center" width="33%">Período</th>
+                        <th class="u-text-bold u-text-center" width="33%">Presentación Declaración Jurada</th>
+                        <th class="u-text-bold u-text-center" width="33%">Vencimiento de Pago</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let registro of misRegistros">
+                        <td class="u-color-2 u-text-center" [innerHTML]="registro.nombre"></td>
+                        <td class="u-color-2 u-text-center" [innerHTML]="registro.fechaDeclaracion"></td>
+                        <td class="u-color-2 u-text-center" [innerHTML]="registro.vencimiento"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="acordeon__contenido" *ngIf="miAcordeon">
+  <div class="acordeon__contenedor-acordeon" id="headingFuniones">
+      <button class="acordeon__boton-acordeon collapsed" data-toggle="collapse" data-target="#acordeonFuniones" aria-expanded="false" aria-controls="acordeonFunciones">
+        Funciones
+      </button>
+  </div>
+  <div id="acordeonFuniones" class="collapse" aria-labelledby="headingFuniones" data-parent="#acordeon">
+    <div class="acordeon__acordeon-interno acordeon__acordeon-interno--texto-izquierda ">
+        <div class="acordeon__funciones" [innerHTML]="acordeon.texto"></div>
+    </div>
+  </div>
+</div>
